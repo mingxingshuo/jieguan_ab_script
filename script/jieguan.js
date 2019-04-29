@@ -4,6 +4,7 @@ const user = require('./test_user')
 const female = require('./test_tag_female')
 const male = require('./test_tag_male')
 const unknow = require('./test_tag_unknow')
+const clear_mem = require('./clear_mem')
 const mem = require("../util/mem")
 var code = 84
 
@@ -52,8 +53,14 @@ schedule.scheduleJob(rule2, async function () {
     console.log('-------------未知_flag----',tag_flag)
     console.log('-------未知 flag-------',!tag_flag)
     if (!tag_flag) {
-        await unknow.tag(code)
+        unknow.tag(code)
         await mem.set("big_tag_unknow_flag_" + code, 1, 60 * 60)
     }
 })
 
+var rule3 = new schedule.RecurrenceRule();
+rule3.seconds = 1
+
+schedule.scheduleJob(rule3, async function () {
+     await clear_mem.a()
+ })
