@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="888c7085-863e-4cfb-b676-ca322afa6a16" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/Config.js" afterPath="$PROJECT_DIR$/model/Config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/script/createTag.js" afterPath="$PROJECT_DIR$/script/createTag.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -90,20 +90,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="createTag.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="createTag.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/script/createTag.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="2" column="46" lean-forward="false" selection-start-line="2" selection-start-column="46" selection-end-line="2" selection-end-column="46" />
-              <folding>
-                <marker date="1556534992507" expanded="true" signature="158:1683" ph="{...}" />
-                <marker date="1556534992507" expanded="true" signature="271:1680" ph="[...]" />
-              </folding>
+            <state relative-caret-position="468">
+              <caret line="35" column="55" lean-forward="true" selection-start-line="35" selection-start-column="55" selection-end-line="35" selection-end-column="55" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Config.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Config.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/Config.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="378">
@@ -151,9 +148,9 @@
         <option value="$PROJECT_DIR$/script/test_tag_unknow.js" />
         <option value="$PROJECT_DIR$/script/test_follow.js" />
         <option value="$PROJECT_DIR$/script/test_user.js" />
-        <option value="$PROJECT_DIR$/script/createTag.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/model/Config.js" />
+        <option value="$PROJECT_DIR$/script/createTag.js" />
       </list>
     </option>
   </component>
@@ -351,12 +348,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1556520507205</updated>
-      <workItem from="1556520508967" duration="14581000" />
+      <workItem from="1556520508967" duration="14715000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14581000" />
+    <option name="totallyTimeSpent" value="14715000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -441,17 +438,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/script/createTag.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="2" column="46" lean-forward="false" selection-start-line="2" selection-start-column="46" selection-end-line="2" selection-end-column="46" />
-          <folding>
-            <marker date="1556534992507" expanded="true" signature="158:1683" ph="{...}" />
-            <marker date="1556534992507" expanded="true" signature="271:1680" ph="[...]" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/util/mem.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
@@ -520,6 +506,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="14" column="3" lean-forward="true" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/createTag.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="35" column="55" lean-forward="true" selection-start-line="35" selection-start-column="55" selection-end-line="35" selection-end-column="55" />
           <folding />
         </state>
       </provider>
