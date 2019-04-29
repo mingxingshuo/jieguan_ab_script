@@ -29,6 +29,7 @@ function update_tag(_id, code, tagId, sex, next) {
                 return next(null, null, null, null)
             }
         }
+        console.log('-------男  打标签---------')
         var user_arr = [];
         users.forEach(function (user) {
             user_arr.push(user.openid)
