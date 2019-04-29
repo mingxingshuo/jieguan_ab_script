@@ -1,6 +1,9 @@
 const wechat_util = require('../util/get_weichat_client.js')
 var async = require('async');
 var UserTagModel = require('../model/UserTag')
+var UserconfModel = require('../model/Userconf');
+var OpenidModel = require('../model/Openid');
+var RecordModel = require('../model/Record')
 
 async function a() {
     let code = process.argv.slice(2)[0]
