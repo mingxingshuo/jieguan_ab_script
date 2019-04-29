@@ -70,7 +70,7 @@ async function update_user(_id, code) {
                                     update_user(users[99]._id, code);
                                     console.log(code + '-------user-countinue')
                                 } else {
-                                    mem.set('big_user_ending_' + code, 1, 7 * 24 * 60 * 60)
+                                    mem.set('big_user_ending_' + code, 1, 60)
                                     console.log(code + '-------user---end')
                                     return
                                 }

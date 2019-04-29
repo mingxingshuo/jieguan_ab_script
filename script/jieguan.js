@@ -12,7 +12,7 @@ schedule.scheduleJob(rule, async function () {
     let follow_flag = await mem.get('big_follow_flag_' + code)
     if (!follow_flag) {
         follow.users(code)
-        await mem.set("big_follow_flag_" + code, 1, 24 * 60 * 60)
+        await mem.set("big_follow_flag_" + code, 1, 60)
     }
 })
 
@@ -23,7 +23,7 @@ schedule.scheduleJob(rule1, async function () {
     let user_flag = await mem.get('big_user_flag_' + code)
     if (!user_flag) {
         user.get_user(code)
-        await mem.set("big_user_flag_" + code, 1, 24 * 60 * 60)
+        await mem.set("big_user_flag_" + code, 1, 60)
     }
 })
 
@@ -34,20 +34,20 @@ schedule.scheduleJob(rule2, async function () {
     let tag_flag = await mem.get('big_tag_female_flag_' + code)
     if (!tag_flag) {
         tag.tag(code)
-        await mem.set("big_tag_female_flag_" + code, 1, 24 * 60 * 60)
+        await mem.set("big_tag_female_flag_" + code, 1, 60)
     }
 })
 schedule.scheduleJob(rule2, async function () {
     let tag_flag = await mem.get('big_tag_male_flag_' + code)
     if (!tag_flag) {
         tag.tag(code)
-        await mem.set("big_tag_male_flag_" + code, 1, 24 * 60 * 60)
+        await mem.set("big_tag_male_flag_" + code, 1, 60)
     }
 })
 schedule.scheduleJob(rule2, async function () {
     let tag_flag = await mem.get('big_tag_unknow_flag_' + code)
     if (!tag_flag) {
         tag.tag(code)
-        await mem.set("big_tag_unknow_flag_" + code, 1, 24 * 60 * 60)
+        await mem.set("big_tag_unknow_flag_" + code, 1,  60)
     }
 })
