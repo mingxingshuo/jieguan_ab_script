@@ -17,6 +17,7 @@ async function get_users(code, openid) {
     let openidCount = OpenidModel.count({code: code})
     if (openidCount >= 100000) {
         await mem.set("big_follow_flag_" + code, 0, 1)
+        console.log('--------------aaaaaaaaa')
         return
     }
     let client = await wechat_util.getClient(code)
