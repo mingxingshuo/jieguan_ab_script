@@ -1,6 +1,7 @@
 const UserconfModel = require('../model/Userconf');
 const UserTagModel = require('../model/UserTag')
 const RecordModel = require('../model/Record')
+var ConfigModel = require('../model/Config');
 const wechat_util = require('../util/get_weichat_client.js')
 const mem = require("../util/mem")
 
