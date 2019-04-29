@@ -25,6 +25,14 @@ async function a() {
                     }
                 })
             })
+        }, function (callback) {
+            UserconfModel.remove({code: code}, function (err, doc) {
+                OpenidModel.remove({code: code}, function (err, doc) {
+                    RecordModel.remove({code: code}, function (err, doc) {
+                        callback(null)
+                    })
+                })
+            })
         }, function () {
             client.createTag("明星说未知", async function (err, data) {
                 await UserTagModel.create({id: data.tag.id, name: "未知", code: code, sex: '0'})
