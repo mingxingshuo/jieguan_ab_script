@@ -5,21 +5,8 @@ var wechat_util = require('../util/get_weichat_client.js')
 var ConfigModel = require('../model/Config');
 
 async function tag(code) {
-    let tags = await UserTagModel.find({code: code})
-    let config = await ConfigModel.findOne({code: code})
-    for (let tag of tags) {
-        console.log(tag, '------tag')
-        let sex = tag.sex
-        let id = tag.id
-        if (sex == "0" && config.attribute == 1) {
-            let tag1 = await UserTagModel.findOne({code: code, sex: '1'})
-            id = tag1.id
-        } else if (sex == "0" && config.attribute == 2) {
-            let tag2 = await UserTagModel.findOne({code: code, sex: '2'})
-            id = tag2.id
-        }
-        get_tag(null, code, id, sex)
-    }
+    let tag = await UserTagModel.find({code: code, sex: '2'})
+    get_tag(null, code, tag.id, '2')
 }
 
 function get_tag(_id, code, tagId, sex) {
@@ -33,6 +20,9 @@ function get_tag(_id, code, tagId, sex) {
 
 function update_tag(_id, code, tagId, sex, next) {
     UserconfModel.fetchTag(_id, code, sex, async function (error, users) {
+        if (users.length != 50) {
+            mem.set('big_tag_female_ending', 1, 7 * 24 * 60 * 60)
+        }
         var user_arr = [];
         users.forEach(function (user) {
             user_arr.push(user.openid)
@@ -63,7 +53,8 @@ function update_tag(_id, code, tagId, sex, next) {
                 if (users.length == 50) {
                     return next(users[49]._id, code, tagId, sex);
                 } else {
-                    return next(users[users.length - 1]._id, code, tagId, sex);
+                    await mem.set("big_tag_flag_" + code, 0, 1)
+                    return next(null, null, null, null)
                 }
             })
         }

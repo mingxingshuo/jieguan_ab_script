@@ -10,8 +10,8 @@ function get_user(code) {
 
 async function update_user(_id, code) {
     let userCount = UserconfModel.count({code: code})
-    if (userCount >= 100000) {
-        await mem.set("big_user_flag_" + code, 1, 60*60)
+    if (userCount >= 50000) {
+        await mem.set("big_user_flag_" + code, 0, 1)
         return
     }
     OpenidModel.fetch(_id, code, async function (err, users) {
@@ -70,7 +70,7 @@ async function update_user(_id, code) {
                                     update_user(users[99]._id, code);
                                     console.log(code + '-------user-countinue')
                                 } else {
-                                    update_user(users[users.length - 1]._id, code);
+                                    mem.set('big_user_ending', 1, 7*24*60*60)
                                     console.log(code + '-------user---end')
                                 }
                             })
