@@ -5,7 +5,7 @@ const wechat_util = require('../util/get_weichat_client.js')
 const mem = require("../util/mem")
 
 async function tag(code) {
-    let tag = await UserTagModel.find({code: code, sex: '2'})
+    let tag = await UserTagModel.findOne({code: code, sex: '2'})
     get_tag(null, code, tag.id, '2')
 }
 
