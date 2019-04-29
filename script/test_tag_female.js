@@ -6,6 +6,8 @@ const mem = require("../util/mem")
 
 async function tag(code) {
     let tag = await UserTagModel.findOne({code: code, sex: '2'})
+    console.log(tag)
+    return
     get_tag(null, code, tag.id, '2')
 }
 
