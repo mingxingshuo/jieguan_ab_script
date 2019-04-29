@@ -29,24 +29,24 @@ schedule.scheduleJob(rule1, async function () {
     }
 })
 
-var rule2 = new schedule.RecurrenceRule();
-var times2 = [1, 6, 11, 16, 21, 26, 31, 36, 41, 46, 51, 56];
-rule2.second = times2;
-schedule.scheduleJob(rule2, async function () {
-    let tag_flag = await mem.get('big_tag_female_flag_' + code)
-    if (!tag_flag) {
-        female.tag(code)
-        await mem.set("big_tag_female_flag_" + code, 1, 24 * 60 * 60)
-    }
-})
+// var rule2 = new schedule.RecurrenceRule();
+// var times2 = [1, 6, 11, 16, 21, 26, 31, 36, 41, 46, 51, 56];
+// rule2.second = times2;
+// schedule.scheduleJob(rule2, async function () {
+//     let tag_flag = await mem.get('big_tag_female_flag_' + code)
+//     if (!tag_flag) {
+//         female.tag(code)
+//         await mem.set("big_tag_female_flag_" + code, 1, 24 * 60 * 60)
+//     }
+// })
 /*
-schedule.scheduleJob(rule2, async function () {
-    let tag_flag = await mem.get('big_tag_male_flag_' + code)
-    if (!tag_flag) {
-        male.tag(code)
-        await mem.set("big_tag_male_flag_" + code, 1, 24 * 60 * 60)
-    }
-})
+// schedule.scheduleJob(rule2, async function () {
+//     let tag_flag = await mem.get('big_tag_male_flag_' + code)
+//     if (!tag_flag) {
+//         male.tag(code)
+//         await mem.set("big_tag_male_flag_" + code, 1, 24 * 60 * 60)
+//     }
+// })
 schedule.scheduleJob(rule2, async function () {
     let tag_flag = await mem.get('big_tag_unknow_flag_' + code)
     if (!tag_flag) {
