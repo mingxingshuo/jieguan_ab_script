@@ -1,5 +1,6 @@
 const wechat_util = require('../util/get_weichat_client.js')
 var async = require('async');
+var UserTagModel = require('../model/UserTag')
 
 async function a() {
     let code = process.argv.slice(2)[0]
