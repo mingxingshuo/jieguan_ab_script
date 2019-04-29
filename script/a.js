@@ -1,3 +1,5 @@
+const mem = require("../util/mem")
+
 async function a() {
     let code = process.argv.slice(2)[0]
     await mem.set("big_follow_flag_" + code, 0, 1)
