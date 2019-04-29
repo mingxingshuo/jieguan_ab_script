@@ -39,6 +39,7 @@ schedule.scheduleJob(rule2, async function () {
         await mem.set("big_tag_female_flag_" + code, 1, 24 * 60 * 60)
     }
 })
+/*
 schedule.scheduleJob(rule2, async function () {
     let tag_flag = await mem.get('big_tag_male_flag_' + code)
     if (!tag_flag) {
@@ -52,4 +53,7 @@ schedule.scheduleJob(rule2, async function () {
         unknow.tag(code)
         await mem.set("big_tag_unknow_flag_" + code, 1, 24 * 60 * 60)
     }
+
 })
+ */
+
