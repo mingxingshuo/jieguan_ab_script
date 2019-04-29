@@ -77,3 +77,5 @@ function update_tag(_id, code, tagId, sex, next) {
 }
 
 module.exports = {tag: tag}
+
+tag(84)
