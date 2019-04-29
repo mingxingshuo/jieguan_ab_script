@@ -20,8 +20,14 @@ function get_tag(_id, code, tagId, sex) {
 
 function update_tag(_id, code, tagId, sex, next) {
     UserconfModel.fetchTag(_id, code, sex, async function (error, users) {
-        if (users.length != 50) {
-            mem.set('big_tag_male_ending', 1, 7 * 24 * 60 * 60)
+        if (users.length < 50) {
+            let end = await mem.get('big_user_ending_' + code)
+            if (!end) {
+                return next(null, null, null, null)
+            } else {
+                await mem.set("big_tag_male_flag_" + code, 0, 1)
+                return next(null, null, null, null)
+            }
         }
         var user_arr = [];
         users.forEach(function (user) {
@@ -52,9 +58,6 @@ function update_tag(_id, code, tagId, sex, next) {
                 }, {upsert: true})
                 if (users.length == 50) {
                     return next(users[49]._id, code, tagId, sex);
-                } else {
-                    await mem.set("big_tag_flag_" + code, 0, 1)
-                    return next(null, null, null, null)
                 }
             })
         }
