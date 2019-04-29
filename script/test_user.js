@@ -72,6 +72,7 @@ async function update_user(_id, code) {
                                 } else {
                                     mem.set('big_user_ending_' + code, 1, 7 * 24 * 60 * 60)
                                     console.log(code + '-------user---end')
+                                    return
                                 }
                             })
                         })
