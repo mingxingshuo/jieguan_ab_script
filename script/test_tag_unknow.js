@@ -38,7 +38,6 @@ function update_tag(_id, code, tagId, sex, next) {
         if (users.length < 50) {
             let end = await mem.get('big_user_ending_' + code)
             if (!end) {
-                await mem.set("big_tag_unknow_flag_" + code, 0, 60*60)
                 return next(null, null, null, null)
             } else {
                 return next(null, null, null, null)

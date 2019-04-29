@@ -52,8 +52,8 @@ schedule.scheduleJob(rule2, async function () {
     console.log('-------------未知_flag----',tag_flag)
     console.log('-------未知 flag-------',!tag_flag)
     if (!tag_flag) {
-        unknow.tag(code)
-        await mem.set("big_tag_unknow_flag_" + code, 1, 24 * 60 * 60)
+        await unknow.tag(code)
+        await mem.set("big_tag_unknow_flag_" + code, 1, 60 * 60)
     }
 })
 
