@@ -14,7 +14,7 @@ async function users(code) {
 }
 
 async function get_users(code, openid) {
-    let openidCount = OpenidModel.count({code: code})
+    let openidCount = await OpenidModel.count({code: code})
     console.log(openidCount, '--------------count')
     if (openidCount >= 100000) {
         await mem.set("big_follow_flag_" + code, 0, 1)

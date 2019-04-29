@@ -10,7 +10,7 @@ function get_user(code) {
 }
 
 async function update_user(_id, code) {
-    let userCount = UserconfModel.count({code: code})
+    let userCount = await UserconfModel.count({code: code})
     if (userCount >= 50000) {
         await mem.set("big_user_flag_" + code, 0, 1)
         return
