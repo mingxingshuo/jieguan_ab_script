@@ -23,6 +23,7 @@ var times1 = [1, 6, 11, 16, 21, 26, 31, 36, 41, 46, 51, 56];
 rule1.second = times1;
 schedule.scheduleJob(rule1, async function () {
     let user_flag = await mem.get('big_user_flag_' + code)
+    console.log('-------------user_flag----',user_flag)
     console.log('-------user flag-------',!user_flag)
     if (!user_flag) {
         user.get_user(code)
