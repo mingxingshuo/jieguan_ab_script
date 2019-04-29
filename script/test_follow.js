@@ -1,6 +1,7 @@
-var OpenidModel = require('../model/Openid');
-var RecordModel = require('../model/Record')
-var wechat_util = require('../util/get_weichat_client.js')
+const OpenidModel = require('../model/Openid');
+const RecordModel = require('../model/Record')
+const wechat_util = require('../util/get_weichat_client.js')
+const mem = require("../util/mem")
 
 async function users(code) {
     let record = await RecordModel.findOne({code: code})

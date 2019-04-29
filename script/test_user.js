@@ -3,6 +3,7 @@ var UserconfModel = require('../model/Userconf');
 var RecordModel = require('../model/Record')
 var wechat_util = require('../util/get_weichat_client.js')
 var async = require('async');
+const mem = require("../util/mem")
 
 function get_user(code) {
     update_user(null, code)

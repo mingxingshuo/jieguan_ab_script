@@ -1,8 +1,8 @@
-var UserconfModel = require('../model/Userconf');
-var UserTagModel = require('../model/UserTag')
-var RecordModel = require('../model/Record')
-var wechat_util = require('../util/get_weichat_client.js')
-var ConfigModel = require('../model/Config');
+const UserconfModel = require('../model/Userconf');
+const UserTagModel = require('../model/UserTag')
+const RecordModel = require('../model/Record')
+const wechat_util = require('../util/get_weichat_client.js')
+const mem = require("../util/mem")
 
 async function tag(code) {
     let config = await ConfigModel.findOne({code: code})
