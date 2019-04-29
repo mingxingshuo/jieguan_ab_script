@@ -14,7 +14,7 @@ function get_tag(_id, code, tagId, sex) {
         update_tag(_id, code, tagId, sex, get_tag);
     } else {
         console.log('update_tag end');
-        mem.set("big_tag_female_flag_" + code, 0, 1).then(function(){
+        mem.set("big_tag_male_flag_" + code, 0, 1).then(function(){
             
         })
         return

@@ -26,7 +26,7 @@ function get_tag(_id, code, tag_openid, sex) {
         update_tag(_id, code, tagId, sex, get_tag);
     } else {
         console.log('update_tag end');
-        mem.set("big_tag_female_flag_" + code, 0, 1).then(function(){
+        mem.set("big_tag_unknow_flag_" + code, 0, 1).then(function(){
             
         })
         return
@@ -38,7 +38,7 @@ function update_tag(_id, code, tagId, sex, next) {
         if (users.length < 50) {
             let end = await mem.get('big_user_ending_' + code)
             if (!end) {
-                await mem.set("big_tag_female_flag_" + code, 0, 1)
+                await mem.set("big_tag_unknow_flag_" + code, 0, 1)
                 return next(null, null, null, null)
             } else {
                 return next(null, null, null, null)
