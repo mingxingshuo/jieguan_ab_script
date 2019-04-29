@@ -13,9 +13,9 @@ function get_tag(_id, code, tagId, sex) {
     if (code) {
         update_tag(_id, code, tagId, sex, get_tag);
     } else {
-        console.log('update_tag end');
+        console.log('-----女----------update_tag end');
         mem.set("big_tag_female_flag_" + code, 0, 1).then(function(){
-            
+
         })
         return
     }
@@ -62,6 +62,8 @@ function update_tag(_id, code, tagId, sex, next) {
                 }, {upsert: true})
                 if (users.length == 50) {
                     return next(users[49]._id, code, tagId, sex);
+                }else{
+                    return next(null, null, null, null)
                 }
             })
         }
