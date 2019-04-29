@@ -1,7 +1,7 @@
 const UserconfModel = require('../model/Userconf');
 const UserTagModel = require('../model/UserTag')
 const RecordModel = require('../model/Record')
-var ConfigModel = require('../model/Config');
+const ConfigModel = require('../model/Config');
 const wechat_util = require('../util/get_weichat_client.js')
 const mem = require("../util/mem")
 
@@ -18,6 +18,7 @@ async function tag(code) {
         tag = await UserTagModel.findOne({code: code, sex: '0'})
         id = tag.id
     }
+    console.log(id,'------------------')
     get_tag(null, code, id, '0')
 }
 

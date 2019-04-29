@@ -5,7 +5,6 @@ const mem = require("../util/mem")
 
 async function users(code) {
     let record = await RecordModel.findOne({code: code})
-    console.log(record, '-----------------------record')
     if (record) {
         let openid = record.follow_openid
         get_users(code, openid)
