@@ -21,11 +21,12 @@ async function tag(code) {
     get_tag(null, code, id, '0')
 }
 
-function get_tag(_id, code, tagId, sex) {
+function get_tag(_id, code, tag_openid, sex) {
     if (code) {
         update_tag(_id, code, tagId, sex, get_tag);
     } else {
         console.log('update_tag end');
+        await mem.set("big_tag_female_flag_" + code, 0, 1)
         return
     }
 }
