@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="888c7085-863e-4cfb-b676-ca322afa6a16" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/script/test_follow.js" afterPath="$PROJECT_DIR$/script/test_follow.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/script/jieguan.js" afterPath="$PROJECT_DIR$/script/jieguan.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/script/test_tag_unknow.js" afterPath="$PROJECT_DIR$/script/test_tag_unknow.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/script/test_user.js" afterPath="$PROJECT_DIR$/script/test_user.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -54,8 +55,8 @@
       <file leaf-file-name="test_user.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/script/test_user.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="52" column="63" lean-forward="false" selection-start-line="52" selection-start-column="63" selection-end-line="52" selection-end-column="63" />
+            <state relative-caret-position="1445">
+              <caret line="77" column="30" lean-forward="true" selection-start-line="77" selection-start-column="30" selection-end-line="77" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -74,8 +75,8 @@
       <file leaf-file-name="test_tag_unknow.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/script/test_tag_unknow.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="20" column="38" lean-forward="false" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+            <state relative-caret-position="-13">
+              <caret line="25" column="51" lean-forward="true" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -94,8 +95,8 @@
       <file leaf-file-name="jieguan.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/script/jieguan.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="7" column="41" lean-forward="true" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
+            <state relative-caret-position="1242">
+              <caret line="46" column="47" lean-forward="true" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -149,12 +150,12 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/model/Config.js" />
         <option value="$PROJECT_DIR$/script/createTag.js" />
-        <option value="$PROJECT_DIR$/script/jieguan.js" />
         <option value="$PROJECT_DIR$/script/test_tag_female.js" />
         <option value="$PROJECT_DIR$/script/test_tag_male.js" />
-        <option value="$PROJECT_DIR$/script/test_user.js" />
         <option value="$PROJECT_DIR$/script/test_follow.js" />
         <option value="$PROJECT_DIR$/script/test_tag_unknow.js" />
+        <option value="$PROJECT_DIR$/script/jieguan.js" />
+        <option value="$PROJECT_DIR$/script/test_user.js" />
       </list>
     </option>
   </component>
@@ -352,12 +353,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1556520507205</updated>
-      <workItem from="1556520508967" duration="16182000" />
+      <workItem from="1556520508967" duration="16377000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16182000" />
+    <option name="totallyTimeSpent" value="16377000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -474,14 +475,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/script/jieguan.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="7" column="41" lean-forward="true" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/Openid.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-81">
@@ -516,16 +509,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/script/test_user.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="52" column="63" lean-forward="false" selection-start-line="52" selection-start-column="63" selection-end-line="52" selection-end-column="63" />
+        <state relative-caret-position="1445">
+          <caret line="77" column="30" lean-forward="true" selection-start-line="77" selection-start-column="30" selection-end-line="77" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/jieguan.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1242">
+          <caret line="46" column="47" lean-forward="true" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/script/test_tag_unknow.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="20" column="38" lean-forward="false" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+        <state relative-caret-position="-13">
+          <caret line="25" column="51" lean-forward="true" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
           <folding />
         </state>
       </provider>

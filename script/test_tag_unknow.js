@@ -18,7 +18,6 @@ async function tag(code) {
         tag = await UserTagModel.findOne({code: code, sex: '0'})
         id = tag.id
     }
-    console.log(id,'------------------')
     get_tag(null, code, id, '0')
 }
 
