@@ -23,8 +23,7 @@ var times1 = [1, 6, 11, 16, 21, 26, 31, 36, 41, 46, 51, 56];
 rule1.second = times1;
 schedule.scheduleJob(rule1, async function () {
     let user_flag = await mem.get('big_user_flag_' + code)
-    console.log('-------------user_flag----',user_flag)
-    console.log('-------user flag-------',!user_flag)
+    
     if (!user_flag) {
         user.get_user(code)
         await mem.set("big_user_flag_" + code, 1, 60 * 60)
@@ -50,6 +49,8 @@ schedule.scheduleJob(rule2, async function () {
 })
 schedule.scheduleJob(rule2, async function () {
     let tag_flag = await mem.get('big_tag_unknow_flag_' + code)
+    console.log('-------------未知_flag----',tag_flag)
+    console.log('-------未知 flag-------',!tag_flag)
     if (!tag_flag) {
         unknow.tag(code)
         await mem.set("big_tag_unknow_flag_" + code, 1, 24 * 60 * 60)
