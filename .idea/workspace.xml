@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="888c7085-863e-4cfb-b676-ca322afa6a16" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/script/jieguan.js" afterPath="$PROJECT_DIR$/script/jieguan.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -80,16 +81,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Openid.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/Openid.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-81">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="test_tag_unknow.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/script/test_tag_unknow.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -116,8 +107,18 @@
       <file leaf-file-name="jieguan.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/script/jieguan.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="45" column="49" lean-forward="false" selection-start-line="45" selection-start-column="49" selection-end-line="45" selection-end-column="49" />
+            <state relative-caret-position="1458">
+              <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Userconf.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/Userconf.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-567">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -135,10 +136,10 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>---error</find>
-      <find>big_follow_flag_</find>
-      <find>big_user_flag_</find>
       <find>config</find>
       <find>ConfigModel</find>
+      <find>big_user_flag_</find>
+      <find>big_follow_flag_</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -360,12 +361,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1556520507205</updated>
-      <workItem from="1556520508967" duration="20888000" />
+      <workItem from="1556520508967" duration="21362000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20888000" />
+    <option name="totallyTimeSpent" value="21362000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -517,14 +518,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/script/test_follow.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/script/test_tag_unknow.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -549,10 +542,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/model/Userconf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-567">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/test_follow.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/script/jieguan.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="45" column="49" lean-forward="false" selection-start-line="45" selection-start-column="49" selection-end-line="45" selection-end-column="49" />
+        <state relative-caret-position="1458">
+          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
           <folding />
         </state>
       </provider>
