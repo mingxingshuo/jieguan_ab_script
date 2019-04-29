@@ -1,7 +1,9 @@
 const schedule = require("node-schedule");
 const follow = require('./test_follow')
 const user = require('./test_user')
-const tag = require('./test_tag_unknow')
+const female = require('./test_tag_female')
+const male = require('./test_tag_male')
+const unknow = require('./test_tag_unknow')
 const mem = require("../util/mem")
 var code = 84
 
@@ -33,21 +35,21 @@ rule2.second = times2;
 schedule.scheduleJob(rule2, async function () {
     let tag_flag = await mem.get('big_tag_female_flag_' + code)
     if (!tag_flag) {
-        tag.tag(code)
+        female.tag(code)
         await mem.set("big_tag_female_flag_" + code, 1, 24 * 60 * 60)
     }
 })
 schedule.scheduleJob(rule2, async function () {
     let tag_flag = await mem.get('big_tag_male_flag_' + code)
     if (!tag_flag) {
-        tag.tag(code)
+        male.tag(code)
         await mem.set("big_tag_male_flag_" + code, 1, 24 * 60 * 60)
     }
 })
 schedule.scheduleJob(rule2, async function () {
     let tag_flag = await mem.get('big_tag_unknow_flag_' + code)
     if (!tag_flag) {
-        tag.tag(code)
+        unknow.tag(code)
         await mem.set("big_tag_unknow_flag_" + code, 1, 24 * 60 * 60)
     }
 })
