@@ -1,7 +1,9 @@
 const mem = require("./mem")
 var wechat_util = require('../util/get_weichat_client.js')
 async function clear(code){
+    console.log('-------清空调用次数flag------')
 	let flag = await mem.get('dahao_script_clear_'+code)
+    console.log(flag)
 	if(flag){
 		return
 	}
@@ -9,7 +11,9 @@ async function clear(code){
     let conf = await ConfigModel.findOne({code: code})
     let appid = conf.appid
     let client = wechat_util.getClient(code)
-    await client_clear(client,appid)
+    let clear_data = await client_clear(client,appid)
+    console.log('-------清空调用次数返回------')
+    console.log(clear_data)
 	setTimeout(function () {
         mem.set('dahao_script_clear_'+code,'',60).then(function () {
 
