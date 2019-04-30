@@ -56,6 +56,8 @@ function update_tag(_id, code, tagId, sex, next) {
         } else {
             client.membersBatchtagging(tagId, user_arr, async function (error, res) {
                 if (error) {
+                    console.log('----未知 打标签 error------')
+                    console.log(error)
                     if (error.code == 45009) {
                         clear.clear(code)
                         return next(users[0]._id, code, tagId, sex);
@@ -64,6 +66,8 @@ function update_tag(_id, code, tagId, sex, next) {
                     }
                 }
                 if (res.errcode) {
+                    console.log('----未知 打标签 res error------')
+                    console.log(res)
                     await RecordModel.findOneAndUpdate({code: code}, {
                         code: code,
                         tag_openid: user_arr[0],
