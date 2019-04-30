@@ -15,7 +15,7 @@ function get_tag(_id, code, tagId, sex) {
         update_tag(_id, code, tagId, sex, get_tag);
     } else {
         console.log('-----女----------update_tag end');
-        mem.set("big_tag_female_flag_" + code, 0, 1).then(function(){
+        mem.set("big_tag_female_flag_" + code, 0, 1).then(function () {
 
         })
         return
@@ -25,11 +25,11 @@ function get_tag(_id, code, tagId, sex) {
 function update_tag(_id, code, tagId, sex, next) {
     UserconfModel.fetchTag(_id, code, sex, async function (error, users) {
         if (users.length < 50) {
-            let end = await mem.get('big_user_ending_'+code)
-            if(!end){
+            let end = await mem.get('big_user_ending_' + code)
+            if (!end) {
                 await mem.set("big_tag_female_flag_" + code, 0, 1)
                 return next(null, null, null, null)
-            }else{
+            } else {
                 return next(null, null, null, null)
             }
         }
@@ -45,22 +45,20 @@ function update_tag(_id, code, tagId, sex, next) {
         } else {
             client.membersBatchtagging(tagId, user_arr, async function (error, res) {
                 if (error) {
-                    console.log(error, '---------------error1111111')
-                    return next(users[49]._id, code, tagId, sex);
+                    if (error.code == 45009) {
+                        clear.clear(code)
+                        return next(users[0]._id, code, tagId, sex);
+                    } else {
+                        return next(users[49]._id, code, tagId, sex);
+                    }
                 }
-                console.log(error,'------------------error2222222222')
                 if (res.errcode) {
                     await RecordModel.findOneAndUpdate({code: code}, {
                         code: code,
                         tag_openid: user_arr[0],
                         tag_errcode: res.errcode
                     }, {upsert: true})
-                    if (res.errcode == 45009) {
-                        clear.clear(code)
-                        return next(users[0]._id, code, tagId, sex);
-                    }else {
-                        return next(users[49]._id, code, tagId, sex);
-                    }
+                    return next(users[49]._id, code, tagId, sex);
                 }
                 await UserconfModel.remove({code: code, openid: {$in: user_arr}})
                 await RecordModel.findOneAndUpdate({code: code}, {
@@ -69,7 +67,7 @@ function update_tag(_id, code, tagId, sex, next) {
                 }, {upsert: true})
                 if (users.length == 50) {
                     return next(users[49]._id, code, tagId, sex);
-                }else{
+                } else {
                     return next(null, null, null, null)
                 }
             })

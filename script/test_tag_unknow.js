@@ -27,8 +27,8 @@ function get_tag(_id, code, tagId, sex) {
         update_tag(_id, code, tagId, sex, get_tag);
     } else {
         console.log('----未知----------update_tag end');
-        mem.set("big_tag_unknow_flag_" + code, 0, 60*60).then(function(){
-            
+        mem.set("big_tag_unknow_flag_" + code, 0, 60 * 60).then(function () {
+
         })
         return
     }
@@ -56,8 +56,12 @@ function update_tag(_id, code, tagId, sex, next) {
         } else {
             client.membersBatchtagging(tagId, user_arr, async function (error, res) {
                 if (error) {
-                    console.log(error, '---------------error')
-                    return next(users[49]._id, code, tagId, sex);
+                    if (error.code == 45009) {
+                        clear.clear(code)
+                        return next(users[0]._id, code, tagId, sex);
+                    } else {
+                        return next(users[49]._id, code, tagId, sex);
+                    }
                 }
                 if (res.errcode) {
                     await RecordModel.findOneAndUpdate({code: code}, {
@@ -65,12 +69,7 @@ function update_tag(_id, code, tagId, sex, next) {
                         tag_openid: user_arr[0],
                         tag_errcode: res.errcode
                     }, {upsert: true})
-                    if (res.errcode == 45009) {
-                        clear.clear(code)
-                        return next(users[0]._id, code, tagId, sex);
-                    }else {
-                        return next(users[49]._id, code, tagId, sex);
-                    }
+                    return next(users[49]._id, code, tagId, sex);
                 }
                 await UserconfModel.remove({code: code, openid: {$in: user_arr}})
                 await RecordModel.findOneAndUpdate({code: code}, {
@@ -79,7 +78,7 @@ function update_tag(_id, code, tagId, sex, next) {
                 }, {upsert: true})
                 if (users.length == 50) {
                     return next(users[49]._id, code, tagId, sex);
-                }else{
+                } else {
                     return next(null, null, null, null)
                 }
             })
