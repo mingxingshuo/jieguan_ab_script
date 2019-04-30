@@ -12,7 +12,7 @@ async function clear(code){
 	await mem.set('dahao_script_clear_'+code,'1',60)
     let conf = await ConfigModel.findOne({code: code})
     let appid = conf.appid
-    let client = wechat_util.getClient(code)
+    let client = await wechat_util.getClient(code)
     let clear_data = await client_clear(client,appid)
     console.log('-------清空调用次数返回------')
     console.log(clear_data)
