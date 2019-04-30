@@ -26,12 +26,12 @@ async function update_user(_id, code) {
             await mem.set("big_user_flag_" + code, 0, 60 * 60)
             return
         } else {
-            b_user(user_arr,code,users)
+            b_user(user_arr,code,users,client)
         }
     })
 }
 
-async function b_user(user_arr,code,users){
+async function b_user(user_arr,code,users,client){
     client.batchGetUsers(user_arr, async function (err, data) {
                 if (err) {
                     update_user(users[99]._id, code);
