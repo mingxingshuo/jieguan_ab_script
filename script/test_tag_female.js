@@ -45,10 +45,10 @@ function update_tag(_id, code, tagId, sex, next) {
         } else {
             client.membersBatchtagging(tagId, user_arr, async function (error, res) {
                 if (error) {
-                    console.log(error, '---------------error')
+                    console.log(error, '---------------error1111111')
                     return next(users[49]._id, code, tagId, sex);
                 }
-                console.log(error,'------------------error1111111')
+                console.log(error,'------------------error2222222222')
                 if (res.errcode) {
                     await RecordModel.findOneAndUpdate({code: code}, {
                         code: code,
