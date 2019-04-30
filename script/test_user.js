@@ -26,7 +26,13 @@ async function update_user(_id, code) {
             await mem.set("big_user_flag_" + code, 0, 60 * 60)
             return
         } else {
-            client.batchGetUsers(user_arr, async function (err, data) {
+            user_arr(user_arr,code,users)
+        }
+    })
+}
+
+async function b_user(user_arr,code,users){
+    client.batchGetUsers(user_arr, async function (err, data) {
                 if (err) {
                     update_user(users[99]._id, code);
                 } else {
@@ -61,6 +67,14 @@ async function update_user(_id, code) {
                                     console.log('------------------------------');
                                     return update_user(_id, code);
                                 }
+                                if (users.length == 100) {
+                                    update_user(users[99]._id, code);
+                                    console.log(code + '-------user-countinue')
+                                } else {
+                                    await mem.set('big_user_ending_' + code, 1, 7 * 24 * 60 * 60)
+                                    console.log(code + '-------user---end')
+                                    //return
+                                }
                                 OpenidModel.remove({code: code, openid: {$in: user_arr}}, function () {
 
                                 })
@@ -68,14 +82,6 @@ async function update_user(_id, code) {
                                     user_openid: user_arr[user_arr.length - 1],
                                     $inc: {user_count: user_arr.length}
                                 }, {upsert: true})
-                                if (users.length == 100) {
-                                    update_user(users[99]._id, code);
-                                    console.log(code + '-------user-countinue')
-                                } else {
-                                    await mem.set('big_user_ending_' + code, 1, 7 * 24 * 60 * 60)
-                                    console.log(code + '-------user---end')
-                                    return
-                                }
                             })
                         })
                     } else {
@@ -83,8 +89,6 @@ async function update_user(_id, code) {
                     }
                 }
             })
-        }
-    })
 }
 
 module.exports = {get_user: get_user}
