@@ -27,6 +27,18 @@ async function update_user(_id, code) {
             return
         } else {
             b_user(user_arr,code,users,client)
+            (function(users,code){
+                setTimeout(function(){
+                    if (users.length == 100) {
+                        update_user(users[99]._id, code);
+                        console.log(code + '-------user-countinue')
+                    } else {
+                        await mem.set('big_user_ending_' + code, 1, 7 * 24 * 60 * 60)
+                        console.log(code + '-------user---end')
+                        //return
+                    }
+                },500)   
+            })(users,code)
         }
     })
 }
@@ -34,7 +46,7 @@ async function update_user(_id, code) {
 async function b_user(user_arr,code,users,client){
     client.batchGetUsers(user_arr, async function (err, data) {
                 if (err) {
-                    update_user(users[99]._id, code);
+                    //update_user(users[99]._id, code);
                 } else {
                     if (data.errcode) {
                         await RecordModel.findOneAndUpdate({code: code}, {
@@ -58,23 +70,16 @@ async function b_user(user_arr,code,users,client){
                         }, function (error) {
                             if (error) {
                                 console.log(error, '--------------error')
-                                return update_user(_id, code);
+                                //return update_user(_id, code);
                             }
                             UserconfModel.insertMany(userArr, async function (error, docs) {
                                 if (error) {
                                     console.log('------insertMany error--------');
                                     console.log(error);
                                     console.log('------------------------------');
-                                    return update_user(_id, code);
+                                    //return update_user(_id, code);
                                 }
-                                if (users.length == 100) {
-                                    update_user(users[99]._id, code);
-                                    console.log(code + '-------user-countinue')
-                                } else {
-                                    await mem.set('big_user_ending_' + code, 1, 7 * 24 * 60 * 60)
-                                    console.log(code + '-------user---end')
-                                    //return
-                                }
+                                
                                 OpenidModel.remove({code: code, openid: {$in: user_arr}}, function () {
 
                                 })
@@ -85,7 +90,7 @@ async function b_user(user_arr,code,users,client){
                             })
                         })
                     } else {
-                        update_user(users[99]._id, code);
+                       // update_user(users[99]._id, code);
                     }
                 }
             })
