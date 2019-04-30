@@ -26,7 +26,7 @@ async function update_user(_id, code) {
             await mem.set("big_user_flag_" + code, 0, 60 * 60)
             return
         } else {
-            b_user(user_arr,code,users,client)
+            b_user(user_arr,code,users,client);
             (function(users,code){
                 setTimeout(function(){
                     if (users.length == 100) {
@@ -34,7 +34,7 @@ async function update_user(_id, code) {
                         console.log(code + '-------user-countinue')
                     } else {
                          mem.set('big_user_ending_' + code, 1, 7 * 24 * 60 * 60).then(function(){
-                            
+
                          })
                         console.log(code + '-------user---end')
                         //return
