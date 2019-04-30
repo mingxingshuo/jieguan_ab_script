@@ -26,7 +26,7 @@ async function update_user(_id, code) {
             await mem.set("big_user_flag_" + code, 0, 60 * 60)
             return
         } else {
-            user_arr(user_arr,code,users)
+            b_user(user_arr,code,users)
         }
     })
 }
