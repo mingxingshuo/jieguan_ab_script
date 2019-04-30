@@ -8,5 +8,6 @@ async function a() {
     await mem.set("big_tag_male_flag_" + code, 0, 1)
     await mem.set("big_tag_unknow_flag_" + code, 0, 1)
     await mem.set('big_user_ending_' + code, 0, 1)
+    await mem.set('dahao_script_clear_' + code, '', 1)
 }
 a()
