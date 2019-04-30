@@ -10,7 +10,11 @@ async function clear(code){
     let appid = conf.appid
     let client = wechat_util.getClient(code)
     await client_clear(client,appid)
-    await mem.set('dahao_script_clear_'+code,'',60)
+	setTimeout(function () {
+        mem.set('dahao_script_clear_'+code,'',60).then(function () {
+
+        })
+    },30*1000)
 };
 
 function client_clear(client,appid){

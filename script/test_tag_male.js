@@ -3,6 +3,7 @@ const UserTagModel = require('../model/UserTag')
 const RecordModel = require('../model/Record')
 const wechat_util = require('../util/get_weichat_client.js')
 const mem = require("../util/mem")
+const clear = require("../util/clear")
 
 async function tag(code) {
     let tag = await UserTagModel.findOne({code: code, sex: '1'})
@@ -53,7 +54,12 @@ function update_tag(_id, code, tagId, sex, next) {
                         tag_openid: user_arr[0],
                         tag_errcode: res.errcode
                     }, {upsert: true})
-                    return next(users[49]._id, code, tagId, sex);
+                    if (res.errcode == 45009) {
+                        clear.clear(code)
+                        return next(users[0]._id, code, tagId, sex);
+                    }else {
+                        return next(users[49]._id, code, tagId, sex);
+                    }
                 }
                 await UserconfModel.remove({code: code, openid: {$in: user_arr}})
                 await RecordModel.findOneAndUpdate({code: code}, {
