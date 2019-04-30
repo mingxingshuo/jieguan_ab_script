@@ -4,7 +4,7 @@ const RecordModel = require('../model/Record')
 const ConfigModel = require('../model/Config');
 const wechat_util = require('../util/get_weichat_client.js')
 const mem = require("../util/mem")
-const clear = require("../util/clear")
+const Mclear = require("../util/clear")
 
 async function tag(code) {
     let config = await ConfigModel.findOne({code: code})
@@ -59,7 +59,7 @@ function update_tag(_id, code, tagId, sex, next) {
                     console.log('----未知 打标签 error------')
                     console.log(error)
                     if (error.code == 45009) {
-                        clear.clear(code)
+                        Mclear.clear(code);
                         (function(_id, code, tagId, sex){
                             setTimeout(function(){
                                 next(_id, code, tagId, sex);
