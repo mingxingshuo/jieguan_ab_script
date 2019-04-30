@@ -49,11 +49,11 @@ function update_tag(_id, code, tagId, sex, next) {
                     console.log(error)
                     if (error.code == 45009) {
                         clear.clear(code)
-                        function(_id, code, tagId, sex){
+                        (function(_id, code, tagId, sex){
                             setTimeout(function(){
                                 next(_id, code, tagId, sex);
                             },2000)
-                        }(users[0]._id, code, tagId, sex)
+                        })(users[0]._id, code, tagId, sex)
                     } else {
                         if (error.code == 45159) {
                             console.log('tagId----------',tagId)
