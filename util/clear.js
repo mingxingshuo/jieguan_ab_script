@@ -1,6 +1,6 @@
 const mem = require("./mem")
 var wechat_util = require('../util/get_weichat_client.js')
-var configModel = require('../model/config');
+var ConfigModel = require('../model/Config');
 
 async function clear(code){
     console.log('-------清空调用次数flag------')
