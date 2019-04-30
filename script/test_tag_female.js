@@ -48,6 +48,7 @@ function update_tag(_id, code, tagId, sex, next) {
                     console.log(error, '---------------error')
                     return next(users[49]._id, code, tagId, sex);
                 }
+                console.log(error,'------------------error1111111')
                 if (res.errcode) {
                     await RecordModel.findOneAndUpdate({code: code}, {
                         code: code,
