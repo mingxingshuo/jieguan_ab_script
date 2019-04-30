@@ -49,7 +49,9 @@ function update_tag(_id, code, tagId, sex, next) {
                     console.log(error)
                     if (error.code == 45009) {
                         clear.clear(code)
-                        return next(users[0]._id, code, tagId, sex);
+                        setTimeout(function(){
+                            next(users[0]._id, code, tagId, sex);
+                        },2000)
                     } else {
                         return next(users[49]._id, code, tagId, sex);
                     }

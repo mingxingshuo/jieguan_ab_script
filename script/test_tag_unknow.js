@@ -59,7 +59,9 @@ function update_tag(_id, code, tagId, sex, next) {
                     console.log('----未知 打标签 error------')
                     console.log(error)
                     if (error.code == 45009) {
-                        clear.clear(code)
+                        setTimeout(function(){
+                            next(users[0]._id, code, tagId, sex);
+                        },2000)
                         return next(users[0]._id, code, tagId, sex);
                     } else {
                         return next(users[49]._id, code, tagId, sex);
