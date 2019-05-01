@@ -23,6 +23,7 @@ async function update_user(_id, code) {
         let client = await wechat_util.getClient(code)
         if (user_arr.length == 0) {
             console.log(user_arr, '-------------------user null')
+            await mem.set("big_user_flag_" + code, 0, 1)
             return
         } else {
             b_user(user_arr, code, users, client);
