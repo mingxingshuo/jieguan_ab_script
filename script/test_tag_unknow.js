@@ -27,7 +27,7 @@ function get_tag(_id, code, tagId, sex) {
         update_tag(_id, code, tagId, sex, get_tag);
     } else {
         console.log('----未知----------update_tag end');
-        mem.set("big_tag_unknow_flag_" + code, 0, 60 * 60).then(function () {
+        mem.set("big_tag_unknow_flag_" + code, 0, 1).then(function () {
 
         })
         return

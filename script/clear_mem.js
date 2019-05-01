@@ -3,6 +3,7 @@ const UserconfModel = require('../model/Userconf');
 
 async function a(code) {
     let count = await UserconfModel.count({code: code, sex: '0'})
+    console.lof(count,'-------------------count')
     if (count >= 50) {
         await mem.set("big_tag_unknow_flag_" + code, 0, 1)
     }
