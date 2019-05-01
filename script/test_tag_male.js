@@ -25,13 +25,13 @@ function get_tag(_id, code, tagId, sex) {
 function update_tag(_id, code, tagId, sex, next) {
     UserconfModel.fetchTag(_id, code, sex, async function (error, users) {
         if (users.length < 50) {
-            let end = await mem.get('big_user_ending_' + code)
-            if (!end) {
+            // let end = await mem.get('big_user_ending_' + code)
+            // if (!end) {
                 await mem.set("big_tag_male_flag_" + code, 0, 1)
                 return next(null, null, null, null)
-            } else {
-                return next(null, null, null, null)
-            }
+            // } else {
+            //     return next(null, null, null, null)
+            // }
         }
         console.log('-------男  打标签---------')
         var user_arr = [];

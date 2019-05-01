@@ -31,7 +31,7 @@ schedule.scheduleJob(rule1, async function () {
 
     if (!user_flag) {
         await mem.set("big_user_flag_" + code, 1, 60 * 60)
-        await mem.set('big_user_ending_' + code, 0, 1)
+        // await mem.set('big_user_ending_' + code, 0, 1)
         user.get_user(code)
     } else {
         return

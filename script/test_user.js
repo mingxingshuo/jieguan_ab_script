@@ -33,11 +33,11 @@ async function update_user(_id, code) {
                         update_user(users[99]._id, code);
                         console.log(code + '-------user-countinue')
                     } else {
-                        mem.set('big_user_ending_' + code, 1, 7 * 24 * 60 * 60).then(function () {
-                            mem.set("big_user_flag_" + code, 0, 1).then(function () {
+                        // mem.set('big_user_ending_' + code, 1, 7 * 24 * 60 * 60).then(function () {
+                        mem.set("big_user_flag_" + code, 0, 1).then(function () {
 
-                            })
                         })
+                        // })
                         console.log(code + '-------user---end')
                         //return
                     }
