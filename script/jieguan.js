@@ -17,6 +17,8 @@ schedule.scheduleJob(rule, async function () {
     if (!follow_flag) {
         follow.users(code)
         await mem.set("big_follow_flag_" + code, 1, 24 * 60 * 60)
+    } else {
+        return
     }
 })
 
@@ -30,6 +32,8 @@ schedule.scheduleJob(rule1, async function () {
     if (!user_flag) {
         user.get_user(code)
         await mem.set("big_user_flag_" + code, 1, 60 * 60)
+    } else {
+        return
     }
 })
 
@@ -42,6 +46,8 @@ schedule.scheduleJob(rule2, async function () {
     if (!tag_flag) {
         female.tag(code)
         await mem.set("big_tag_female_flag_" + code, 1, 60 * 60)
+    } else {
+        return
     }
 })
 schedule.scheduleJob(rule2, async function () {
@@ -49,6 +55,8 @@ schedule.scheduleJob(rule2, async function () {
     if (!tag_flag) {
         male.tag(code)
         await mem.set("big_tag_male_flag_" + code, 1, 60 * 60)
+    } else {
+        return
     }
 })
 schedule.scheduleJob(rule2, async function () {
@@ -57,13 +65,15 @@ schedule.scheduleJob(rule2, async function () {
     console.log('-------未知 flag-------', !tag_flag)
     if (!tag_flag) {
         unknow.tag(code)
-        await mem.set("big_tag_unknow_flag_" + code, 1, 30)
+        await mem.set("big_tag_unknow_flag_" + code, 1, 60 * 60)
+    } else {
+        return
     }
 })
 
-var rule3 = new schedule.RecurrenceRule();
-rule3.second = [1]
-
-schedule.scheduleJob(rule3, async function () {
-    await clear_mem.a(code)
-})
+// var rule3 = new schedule.RecurrenceRule();
+// rule3.second = [1]
+//
+// schedule.scheduleJob(rule3, async function () {
+//     await clear_mem.a(code)
+// })
