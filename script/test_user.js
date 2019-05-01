@@ -31,9 +31,6 @@ async function update_user(_id, code) {
                 setTimeout(function () {
                     if (users.length == 100) {
                         update_user(users[99]._id, code);
-                        mem.set('big_user_ending_' + code, 0, 1).then(function () {
-
-                        })
                         console.log(code + '-------user-countinue')
                     } else {
                         mem.set('big_user_ending_' + code, 1, 7 * 24 * 60 * 60).then(function () {
