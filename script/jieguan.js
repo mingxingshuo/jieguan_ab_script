@@ -14,6 +14,7 @@ var times = [start, start + 10, start + 20, start + 30, start + 40, start + 50];
 rule.second = times;
 schedule.scheduleJob(rule, async function () {
     let follow_flag = await mem.get('big_follow_flag_' + code)
+    console.log('-------------follow_flag----', follow_flag)
     if (!follow_flag) {
         follow.users(code)
         await mem.set("big_follow_flag_" + code, 1, 24 * 60 * 60)
@@ -28,7 +29,7 @@ var times1 = [start, start + 5 * 1, start + 5 * 2, start + 5 * 3, start + 5 * 4,
 rule1.second = times1;
 schedule.scheduleJob(rule1, async function () {
     let user_flag = await mem.get('big_user_flag_' + code)
-
+    console.log('-------------user_flag----', user_flag)
     if (!user_flag) {
         await mem.set("big_user_flag_" + code, 1, 60 * 60)
         // await mem.set('big_user_ending_' + code, 0, 1)
