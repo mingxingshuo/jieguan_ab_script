@@ -9,5 +9,7 @@ async function a() {
     await mem.set("big_tag_unknow_flag_" + code, 0, 1)
     await mem.set('big_user_ending_' + code, 0, 1)
     await mem.set('dahao_script_clear_' + code, '', 1)
+    let follow_flag = await mem.get('big_follow_flag_' + code)
+    console.log('-------------follow_flag----', follow_flag)
 }
 a()
