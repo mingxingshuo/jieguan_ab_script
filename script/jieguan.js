@@ -16,6 +16,7 @@ schedule.scheduleJob(rule, async function () {
     let follow_flag = await mem.get('big_follow_flag_' + code)
     console.log('-------------follow_flag----', follow_flag)
     if (!follow_flag) {
+        console.log('-------------------aaaaaaaaaaaa')
         follow.users(code)
         await mem.set("big_follow_flag_" + code, 1, 24 * 60 * 60)
     } else {
