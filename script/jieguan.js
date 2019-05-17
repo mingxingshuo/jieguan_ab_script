@@ -45,6 +45,8 @@ var times2 = [start, start + 5 * 1, start + 5 * 2, start + 5 * 3, start + 5 * 4,
 rule2.second = times2;
 schedule.scheduleJob(rule2, async function () {
     let tag_flag = await mem.get('big_tag_female_flag_' + code)
+    console.log('-------------女_flag----', tag_flag)
+    console.log('-------女 flag-------', !tag_flag)
     if (!tag_flag) {
         female.tag(code)
         await mem.set("big_tag_female_flag_" + code, 1, 60 * 60)
@@ -54,6 +56,8 @@ schedule.scheduleJob(rule2, async function () {
 })
 schedule.scheduleJob(rule2, async function () {
     let tag_flag = await mem.get('big_tag_male_flag_' + code)
+    console.log('-------------男_flag----', tag_flag)
+    console.log('-------男 flag-------', !tag_flag)
     if (!tag_flag) {
         male.tag(code)
         await mem.set("big_tag_male_flag_" + code, 1, 60 * 60)
