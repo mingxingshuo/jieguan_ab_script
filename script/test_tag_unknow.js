@@ -56,7 +56,7 @@ function update_tag(_id, code, tagId, sex, next) {
                 client.membersBatchtagging(tagId, user_arr, async function (error, res) {
                     if (error) {
                         console.log('----未知 打标签 error------')
-                        console.log(error)
+                        console.log(error,'------------error')
                         if (error.errcode == 45009) {
                             Mclear.clear(code);
                             (function (_id, code, tagId, sex) {
