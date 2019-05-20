@@ -1,4 +1,4 @@
-const mem = require("./mem")
+const mem = require("../util/mem")
 var wechat_util = require('../util/get_weichat_client.js')
 var ConfigModel = require('../model/Config');
 
