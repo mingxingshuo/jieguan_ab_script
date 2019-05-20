@@ -57,7 +57,7 @@ function update_tag(_id, code, tagId, sex, next) {
                     if (error) {
                         console.log('----未知 打标签 error------')
                         console.log(error)
-                        if (error.code == 45009) {
+                        if (error.errcode == 45009) {
                             Mclear.clear(code);
                             (function (_id, code, tagId, sex) {
                                 setTimeout(function () {
