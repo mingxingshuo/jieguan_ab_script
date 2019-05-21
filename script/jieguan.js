@@ -71,9 +71,9 @@ schedule.scheduleJob(rule2, async function () {
     }
 })
 
-// var rule3 = new schedule.RecurrenceRule();
-// rule3.second = [1]
-//
-// schedule.scheduleJob(rule3, async function () {
-//     await clear_mem.a(code)
-// })
+var rule3 = new schedule.RecurrenceRule();
+rule3.hour = [0]
+
+schedule.scheduleJob(rule3, async function () {
+    await mem.set('dahao_script_clear_times_' + code, 0, 24 * 60 * 60)
+})
