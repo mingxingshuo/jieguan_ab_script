@@ -87,6 +87,7 @@ rule4.minute = [1, 6, 11, 16, 21, 26, 31, 36, 41, 46, 51, 56]
 
 schedule.scheduleJob(rule4, async function () {
     let times = await mem.get('dahao_script_clear_times_' + code) || 0
+    console.log(times, '---------------------times')
     if (times <= 2) {
         let num = await mem.get('dahao_tag_num_' + code)
         let current_num = 0
@@ -96,7 +97,9 @@ schedule.scheduleJob(rule4, async function () {
             for (let i of data.tags) {
                 current_num += i.count
             }
+            console.log(num, current_num, '---------------------num')
             if (num >= current_num) {
+                await mem.set('dahao_tag_num_' + code, 0, 1)
                 await ConfigModel.update({code: code}, {status: 1})
                 let cmdStr = 'pm2 stop ' + code
                 let cmdStr1 = 'pm2 delete ' + code
@@ -104,7 +107,7 @@ schedule.scheduleJob(rule4, async function () {
                     setTimeout(function () {
                         exec(cmdStr1, function () {
                         })
-                    },30*1000)
+                    }, 30 * 1000)
                 })
             } else {
                 await mem.set('dahao_tag_num_' + code, current_num, 24 * 60 * 60)
