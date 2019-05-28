@@ -5,7 +5,7 @@ var ConfigModel = require('../model/Config');
 async function clear(code) {
     console.log('-------清空调用次数flag------')
     let flag = await mem.get('dahao_script_clear_' + code)
-    let times = await mem.get('dahao_script_clear_times' + code) || 0
+    let times = await mem.get('dahao_script_clear_times_' + code) || 0
     console.log(flag)
     if (flag) {
         return

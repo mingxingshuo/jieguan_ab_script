@@ -6,7 +6,11 @@ const male = require('./test_tag_male')
 const unknow = require('./test_tag_unknow')
 const clear_mem = require('./clear_mem')
 const mem = require("../util/mem")
-var code = parseInt(process.env.code)
+const code = parseInt(process.env.code)
+const wechat_util = require('../util/get_weichat_client.js')
+const ConfigModel = require('../model/Config');
+var exec = require('child_process').exec;
+
 
 var rule = new schedule.RecurrenceRule();
 let start = parseInt(Math.random() * 10)
@@ -76,4 +80,35 @@ rule3.hour = 1
 
 schedule.scheduleJob(rule3, async function () {
     await mem.set('dahao_script_clear_times_' + code, 0, 24 * 60 * 60)
+})
+
+var rule4 = new schedule.RecurrenceRule();
+rule4.minute = [1, 6, 11, 16, 21, 26, 31, 36, 41, 46, 51, 56]
+
+schedule.scheduleJob(rule4, async function () {
+    let times = await mem.get('dahao_script_clear_times_' + code) || 0
+    if (times <= 2) {
+        let num = await mem.get('dahao_tag_num_' + code)
+        let current_num = 0
+        let client = await wechat_util.getClient(code)
+        client.getTags(async function (err, data) {
+            console.log(err, data, '-----------------', code)
+            for (let i of data.tags) {
+                current_num += i.count
+            }
+            if (num >= current_num) {
+                await ConfigModel.update({code: code}, {status: 1})
+                let cmdStr = 'pm2 stop ' + code
+                let cmdStr1 = 'pm2 delete ' + code
+                exec(cmdStr, function () {
+                    setTimeout(function () {
+                        exec(cmdStr1, function () {
+                        })
+                    },30*1000)
+                })
+            } else {
+                await mem.set('dahao_tag_num_' + code, current_num, 24 * 60 * 60)
+            }
+        })
+    }
 })
