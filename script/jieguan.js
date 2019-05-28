@@ -87,9 +87,8 @@ rule4.minute = [1, 6, 11, 16, 21, 26, 31, 36, 41, 46, 51, 56]
 
 schedule.scheduleJob(rule4, async function () {
     let times = await mem.get('dahao_script_clear_times_' + code) || 0
-    console.log(times, '---------------------times')
     if (times <= 2) {
-        let num = await mem.get('dahao_tag_num_' + code)
+        let num = await mem.get('dahao_tag_num_' + code) || 0
         let current_num = 0
         let client = await wechat_util.getClient(code)
         client.getTags(async function (err, data) {
@@ -102,12 +101,11 @@ schedule.scheduleJob(rule4, async function () {
                 await mem.set('dahao_tag_num_' + code, 0, 1)
                 await ConfigModel.update({code: code}, {status: 1})
                 let cmdStr = 'pm2 stop ' + code
-                let cmdStr1 = 'pm2 delete ' + code
+                // let cmdStr1 = 'pm2 delete ' + code
                 exec(cmdStr, function () {
-                    setTimeout(function () {
-                        exec(cmdStr1, function () {
-                        })
-                    }, 30 * 1000)
+                    // exec(cmdStr1, function () {
+                    //     console.log('---------------------delete')
+                    // })
                 })
             } else {
                 await mem.set('dahao_tag_num_' + code, current_num, 24 * 60 * 60)
