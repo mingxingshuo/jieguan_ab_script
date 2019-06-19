@@ -97,15 +97,12 @@ schedule.scheduleJob(rule4, async function () {
                 current_num += i.count
             }
             console.log(num, current_num, '---------------------num')
-            if (num >= current_num) {
+            if (num != 0 && num >= current_num) {
                 await mem.set('dahao_tag_num_' + code, 0, 1)
                 await ConfigModel.update({code: code}, {status: 1})
                 let cmdStr = 'pm2 stop ' + code
-                // let cmdStr1 = 'pm2 delete ' + code
+                // let cmdStr = 'pm2 delete ' + code
                 exec(cmdStr, function () {
-                    // exec(cmdStr1, function () {
-                    //     console.log('---------------------delete')
-                    // })
                 })
             } else {
                 await mem.set('dahao_tag_num_' + code, current_num, 24 * 60 * 60)
