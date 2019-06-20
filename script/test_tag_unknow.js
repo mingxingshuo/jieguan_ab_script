@@ -59,7 +59,7 @@ function update_tag(_id, code, tagId, sex, next) {
                         if (error.code == 45009) {
                             Mclear.clear(code);
                             setTimeout(function () {
-                                next(users[0]._id, code, tagId, sex);
+                                return next(users[0]._id, code, tagId, sex);
                             }, 60000)
                         } else {
                             if (error.code == 45159) {
