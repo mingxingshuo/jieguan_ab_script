@@ -27,8 +27,8 @@ function update_tag(_id, code, tagId, sex, next) {
         if (users.length < 50) {
             // let end = await mem.get('big_user_ending_' + code)
             // if (!end) {
-                await mem.set("big_tag_female_flag_" + code, 0, 1)
-                return next(null, null, null, null)
+            await mem.set("big_tag_female_flag_" + code, 0, 1)
+            return next(null, null, null, null)
             // } else {
             //     return next(null, null, null, null)
             // }
@@ -48,16 +48,12 @@ function update_tag(_id, code, tagId, sex, next) {
                     console.log('----女 打标签 error------')
                     if (error.code == 45009) {
                         Mclear.clear(code);
-                        
-                        (function(_id, code, tagId, sex){
-                            setTimeout(function(){
-                                next(_id, code, tagId, sex);
-                            },60000)
-                        })(users[0]._id, code, tagId, sex)
-                        
+                        setTimeout(function () {
+                            next(users[0]._id, code, tagId, sex);
+                        }, 60000)
                     } else {
                         if (error.code == 45159) {
-                            console.log('tagId----------',tagId)
+                            console.log('tagId----------', tagId)
                         }
                         return next(users[49]._id, code, tagId, sex);
                     }
