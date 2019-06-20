@@ -15,6 +15,12 @@ async function clear(code) {
     }
     await mem.set('dahao_script_clear_' + code, '1', 60)
     await mem.set('dahao_script_clear_times_' + code, times + 1, 24 * 60 * 60)
+    await mem.set("big_follow_flag_" + code, 0, 1)
+    await mem.set("big_user_flag_" + code, 0, 1)
+    await mem.set("big_tag_female_flag_" + code, 0, 1)
+    await mem.set("big_tag_male_flag_" + code, 0, 1)
+    await mem.set("big_tag_unknow_flag_" + code, 0, 1)
+    await mem.set('big_user_ending_' + code, 0, 1)
     let conf = await ConfigModel.findOne({code: code})
     let appid = conf.appid
     let client = await wechat_util.getClient(code)
