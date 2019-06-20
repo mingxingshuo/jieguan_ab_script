@@ -51,7 +51,7 @@ function update_tag(_id, code, tagId, sex, next) {
                         (function(_id, code, tagId, sex){
                             setTimeout(function(){
                                 next(_id, code, tagId, sex);
-                            },2000)
+                            },60000)
                         })(users[0]._id, code, tagId, sex)
                     } else {
                         if (error.code == 45159) {
