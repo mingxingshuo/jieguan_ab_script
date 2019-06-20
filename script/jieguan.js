@@ -80,6 +80,13 @@ rule3.hour = 1
 
 schedule.scheduleJob(rule3, async function () {
     await mem.set('dahao_script_clear_times_' + code, 0, 24 * 60 * 60)
+    await mem.set("big_follow_flag_" + code, 0, 1)
+    await mem.set("big_user_flag_" + code, 0, 1)
+    await mem.set("big_tag_female_flag_" + code, 0, 1)
+    await mem.set("big_tag_male_flag_" + code, 0, 1)
+    await mem.set("big_tag_unknow_flag_" + code, 0, 1)
+    await mem.set('big_user_ending_' + code, 0, 1)
+    await mem.set('dahao_script_clear_' + code, 0, 1)
 })
 
 var rule4 = new schedule.RecurrenceRule();
