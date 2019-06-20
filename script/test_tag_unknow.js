@@ -60,8 +60,9 @@ function update_tag(_id, code, tagId, sex, next) {
                             Mclear.clear(code);
                             (function (_id, code, tagId, sex) {
                                 setTimeout(function () {
-                                    return next(_id, code, tagId, sex);
-                                }, 600000)
+                                    next(_id, code, tagId, sex);
+                                }, 60000)
+                                return
                             })(users[0]._id, code, tagId, sex)
                         } else {
                             if (error.code == 45159) {

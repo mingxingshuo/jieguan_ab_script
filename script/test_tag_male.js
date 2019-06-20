@@ -48,9 +48,12 @@ function update_tag(_id, code, tagId, sex, next) {
                     console.log('----男 打标签 error------')
                     if (error.code == 45009) {
                         Mclear.clear(code);
-                        setTimeout(function () {
-                            return next(users[0]._id, code, tagId, sex);
-                        }, 60000)
+                        (function (_id, code, tagId, sex) {
+                            setTimeout(function () {
+                                next(_id, code, tagId, sex);
+                            }, 60000)
+                            return
+                        })(users[0]._id, code, tagId, sex)
                     } else {
                         if (error.code == 45159) {
                             console.log('tagId----------',tagId)
