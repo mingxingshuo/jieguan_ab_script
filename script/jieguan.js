@@ -80,6 +80,7 @@ rule3.hour = 1
 
 schedule.scheduleJob(rule3, async function () {
     await mem.set('dahao_script_clear_times_' + code, 0, 24 * 60 * 60)
+    await mem.set('dahao_script_clear_limit_' + code, 0, 24 * 60 * 60)
     await mem.set("big_follow_flag_" + code, 0, 1)
     await mem.set("big_user_flag_" + code, 0, 1)
     await mem.set("big_tag_female_flag_" + code, 0, 1)
@@ -94,7 +95,8 @@ rule4.minute = [1, 6, 11, 16, 21, 26, 31, 36, 41, 46, 51, 56]
 
 schedule.scheduleJob(rule4, async function () {
     let times = await mem.get('dahao_script_clear_times_' + code) || 0
-    if (times < 2) {
+    let limit = await mem.get('dahao_script_clear_limit_' + code)
+    if (!limit && times < 2) {
         let num = await mem.get('dahao_tag_num_' + code) || 0
         let current_num = 0
         let client = await wechat_util.getClient(code)
