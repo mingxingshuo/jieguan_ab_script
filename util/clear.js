@@ -22,7 +22,7 @@ async function clear(code) {
     client.clearQuota(appid, async function (err, data) {
         console.log('-------清空调用次数返回------')
         console.log(data)
-        if (data.errcode == 48006) {
+        if (data && data.errcode == 48006) {
             await mem.set('dahao_script_clear_limit_' + code, 1, 24 * 60 * 60)
         } else {
             await mem.set('dahao_script_clear_' + code, '1', 60)
