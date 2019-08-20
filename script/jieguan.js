@@ -91,7 +91,7 @@ schedule.scheduleJob(rule3, async function () {
 })
 
 var rule4 = new schedule.RecurrenceRule();
-rule4.minute = [6, 16, 26, 36, 46, 56]
+rule4.minute = [56]
 
 schedule.scheduleJob(rule4, async function () {
     let times = await mem.get('dahao_script_clear_times_' + code) || 0
@@ -114,7 +114,7 @@ schedule.scheduleJob(rule4, async function () {
                 exec(cmdStr, function () {
                 })
             } else {
-                await mem.set('dahao_tag_num_' + code, current_num, 24 * 60 * 60)
+                await mem.set('dahao_tag_num_' + code, current_num, 60 * 60)
             }
         })
     }
