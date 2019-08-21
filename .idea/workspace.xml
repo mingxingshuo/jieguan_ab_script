@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="888c7085-863e-4cfb-b676-ca322afa6a16" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/script/c.js" afterPath="$PROJECT_DIR$/script/c.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/util/clear.js" afterPath="$PROJECT_DIR$/util/clear.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -45,8 +43,8 @@
       <file leaf-file-name="clear.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/util/clear.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="24" column="63" lean-forward="true" selection-start-line="24" selection-start-column="63" selection-end-line="24" selection-end-column="63" />
+            <state relative-caret-position="290">
+              <caret line="24" column="65" lean-forward="false" selection-start-line="24" selection-start-column="65" selection-end-line="24" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -55,7 +53,7 @@
       <file leaf-file-name="c.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/script/c.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
+            <state relative-caret-position="135">
               <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
               <folding />
             </state>
@@ -185,8 +183,8 @@
         <option value="$PROJECT_DIR$/script/b.js" />
         <option value="$PROJECT_DIR$/script/test.js" />
         <option value="$PROJECT_DIR$/script/jieguan.js" />
-        <option value="$PROJECT_DIR$/util/clear.js" />
         <option value="$PROJECT_DIR$/script/c.js" />
+        <option value="$PROJECT_DIR$/util/clear.js" />
       </list>
     </option>
   </component>
@@ -441,12 +439,12 @@
       <workItem from="1565922562109" duration="6892000" />
       <workItem from="1566181367982" duration="7094000" />
       <workItem from="1566267831968" duration="5962000" />
-      <workItem from="1566353025353" duration="1044000" />
+      <workItem from="1566353025353" duration="1179000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="197327000" />
+    <option name="totallyTimeSpent" value="197462000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -839,15 +837,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/util/clear.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="24" column="63" lean-forward="true" selection-start-line="24" selection-start-column="63" selection-end-line="24" selection-end-column="63" />
+        <state relative-caret-position="290">
+          <caret line="24" column="65" lean-forward="false" selection-start-line="24" selection-start-column="65" selection-end-line="24" selection-end-column="65" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/script/c.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
+        <state relative-caret-position="135">
           <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
           <folding />
         </state>
