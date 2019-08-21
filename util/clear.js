@@ -21,7 +21,7 @@ async function clear(code) {
     let client = await wechat_util.getClient(code)
     client.clearQuota(appid, async function (err, data) {
         console.log('-------清空调用次数返回------')
-        if (err && err.code && err.code == 48006) {
+        if (err && err.code && (err.code == 48006 || err.code == 45009)) {
             await mem.set('dahao_script_clear_limit_' + code, 'aa', 24 * 60 * 60)
         } else {
             await mem.set('dahao_script_clear_' + code, '1', 60)
