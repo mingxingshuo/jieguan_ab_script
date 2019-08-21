@@ -16,6 +16,7 @@ async function clear(){
     let client = await wechat_util.getClient(code)
     client.clearQuota(appid, function (err, data) {
         console.log('-------清空调用次数返回------')
+        console.log(err)
         console.log(data)
     });
 
