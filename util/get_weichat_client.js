@@ -10,6 +10,7 @@ async function getClient(code) {
         await mem.set("configure_" + code, appid, 30 * 24 * 3600)
     }
     let api = Singleton.getInterface(appid)
+    console.log(api.store,'---------------------store')
     return api.api;
 }
 
