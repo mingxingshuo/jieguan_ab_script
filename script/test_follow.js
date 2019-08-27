@@ -71,7 +71,7 @@ async function get_users(code, openid) {
     } else {
         console.log('==========================')
         client.getFollowers(async function (err, result) {
-            console.log(result,'------------------follow')
+            console.log(err,result,'------------------follow')
             if (err) {
                 console.log(err, '------------------error')
             } else {
