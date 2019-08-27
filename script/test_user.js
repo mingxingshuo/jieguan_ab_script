@@ -1,4 +1,4 @@
-var OpenidModel = require('../model/Openid');
+var OpenidModel = require('../model/Openidjg');
 var UserconfModel = require('../model/Userconfjg');
 var RecordModel = require('../model/Record')
 var wechat_util = require('../util/get_weichat_client.js')

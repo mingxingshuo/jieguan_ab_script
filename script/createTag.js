@@ -2,7 +2,7 @@ const wechat_util = require('../util/get_weichat_client.js')
 var async = require('async');
 var UserTagModel = require('../model/UserTag')
 var UserconfModel = require('../model/Userconfjg');
-var OpenidModel = require('../model/Openid');
+var OpenidModel = require('../model/Openidjg');
 var RecordModel = require('../model/Record')
 
 async function a() {
