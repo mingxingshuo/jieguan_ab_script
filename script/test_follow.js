@@ -4,7 +4,6 @@ const wechat_util = require('../util/get_weichat_client.js')
 const mem = require("../util/mem")
 
 async function users(code) {
-    console.log('----------------------------------------')
     let record = await RecordModel.findOne({code: code})
     if (record) {
         let openid = record.follow_openid
@@ -15,7 +14,6 @@ async function users(code) {
 }
 
 async function get_users(code, openid) {
-    console.log('=============================')
     let openidCount = await OpenidModel.count({code: code})
     if (openidCount >= 100000) {
         await mem.set("big_follow_flag_" + code, 0, 1)
@@ -71,6 +69,7 @@ async function get_users(code, openid) {
             }
         });
     } else {
+        console.log('==========================')
         client.getFollowers(async function (err, result) {
             console.log(result,'------------------follow')
             if (err) {
