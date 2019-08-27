@@ -12,6 +12,22 @@ var UserconfjgSchema = new Schema({
     timestamps: {createdAt: 'createAt', updatedAt: 'updateAt'}
 });
 
+UserconfjgSchema.statics = {
+    fetchTag(id, code, sex, cb){
+        if (id) {
+            return this.find({_id: {$lt: id}, code: code, sex: sex}, ['openid'])
+                .limit(50)
+                .sort({'_id': -1})
+                .exec(cb);
+        } else {
+            return this.find({code: code, sex: sex}, ['openid'])
+                .limit(50)
+                .sort({'_id': -1})
+                .exec(cb);
+        }
+    }
+}
+
 var UserconfjgModel = db.model('Userconfjg', UserconfjgSchema);
 
 module.exports = UserconfjgModel;
