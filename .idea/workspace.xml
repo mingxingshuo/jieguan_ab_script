@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="888c7085-863e-4cfb-b676-ca322afa6a16" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/script/test_follow.js" afterPath="$PROJECT_DIR$/script/test_follow.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/util/get_weichat_client.js" afterPath="$PROJECT_DIR$/util/get_weichat_client.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -40,11 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="get_weichat_client.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="get_weichat_client.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/util/get_weichat_client.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="12" column="43" lean-forward="true" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
+            <state relative-caret-position="135">
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -60,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_follow.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test_follow.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/script/test_follow.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="72" column="22" lean-forward="false" selection-start-line="72" selection-start-column="22" selection-end-line="72" selection-end-column="22" />
+            <state relative-caret-position="135">
+              <caret line="71" column="60" lean-forward="false" selection-start-line="71" selection-start-column="60" selection-end-line="71" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -190,8 +191,8 @@
         <option value="$PROJECT_DIR$/script/createTag.js" />
         <option value="$PROJECT_DIR$/script/test_user.js" />
         <option value="$PROJECT_DIR$/model/Userconfjg.js" />
-        <option value="$PROJECT_DIR$/script/test_follow.js" />
         <option value="$PROJECT_DIR$/util/get_weichat_client.js" />
+        <option value="$PROJECT_DIR$/script/test_follow.js" />
       </list>
     </option>
   </component>
@@ -445,12 +446,12 @@
       <workItem from="1566267831968" duration="5962000" />
       <workItem from="1566353025353" duration="2663000" />
       <workItem from="1566891464201" duration="3205000" />
-      <workItem from="1566897054470" duration="6249000" />
+      <workItem from="1566897054470" duration="6578000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="208400000" />
+    <option name="totallyTimeSpent" value="208729000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -839,14 +840,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/script/test_follow.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="72" column="22" lean-forward="false" selection-start-line="72" selection-start-column="22" selection-end-line="72" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/script/jieguan.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
@@ -857,8 +850,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/util/get_weichat_client.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="43" lean-forward="true" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
+        <state relative-caret-position="135">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/test_follow.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="71" column="60" lean-forward="false" selection-start-line="71" selection-start-column="60" selection-end-line="71" selection-end-column="60" />
           <folding />
         </state>
       </provider>

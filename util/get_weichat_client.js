@@ -3,7 +3,6 @@ const mem = require('../util/mem.js');
 const Singleton = require('/home/work/tuitui_cms/tuitui_weichat/util/get_weichat_client.js');
 
 async function getClient(code) {
-    console.log(Singleton,'---------------------Single')
     let appid = await mem.get("configure_" + code)
     if(!appid){
         let conf = await ConfigModel.findOne({code:code})
