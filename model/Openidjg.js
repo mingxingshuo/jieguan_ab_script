@@ -3,12 +3,12 @@ var Schema = mongoose.Schema;
 var connect_url = require('../conf/proj.json').mongodb;
 var db = mongoose.createConnection(connect_url);
 
-var OpenidSchema = new Schema({
+var OpenidjgSchema = new Schema({
     openid: String,
     code: Number
 });
 
-OpenidSchema.statics = {
+OpenidjgSchema.statics = {
     fetch(id, code, cb){
         if (id) {
             return this.find({_id: {$lt: id}, code: code}, ['openid'])
@@ -24,6 +24,6 @@ OpenidSchema.statics = {
     }
 }
 
-var OpenidModel = db.model('Openid', OpenidSchema);
+var OpenidjgModel = db.model('Openidjg', OpenidjgSchema);
 
-module.exports = OpenidModel;
+module.exports = OpenidjgModel;

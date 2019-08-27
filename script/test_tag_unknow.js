@@ -1,4 +1,4 @@
-const UserconfModel = require('../model/Userconf');
+const UserconfModel = require('../model/Userconfjg');
 const UserTagModel = require('../model/UserTag')
 const RecordModel = require('../model/Record')
 const ConfigModel = require('../model/Config');

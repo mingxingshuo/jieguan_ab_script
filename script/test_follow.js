@@ -1,4 +1,4 @@
-const OpenidModel = require('../model/Openid');
+const OpenidModel = require('../model/Openidjg');
 const RecordModel = require('../model/Record')
 const wechat_util = require('../util/get_weichat_client.js')
 const mem = require("../util/mem")
@@ -22,6 +22,7 @@ async function get_users(code, openid) {
     let client = await wechat_util.getClient(code)
     if (openid) {
         client.getFollowers(openid, async function (err, result) {
+            console.log(result,'------------------follow')
             if (err) {
                 console.log(err, '------------------error')
             } else {
@@ -69,6 +70,7 @@ async function get_users(code, openid) {
         });
     } else {
         client.getFollowers(async function (err, result) {
+            console.log(result,'------------------follow')
             if (err) {
                 console.log(err, '------------------error')
             } else {

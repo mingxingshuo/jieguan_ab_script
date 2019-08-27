@@ -1,5 +1,5 @@
 const mem = require("../util/mem")
-const UserconfModel = require('../model/Userconf');
+const UserconfModel = require('../model/Userconfjg');
 
 async function a(code) {
     let count = await UserconfModel.count({code: code, sex: '0'})
