@@ -75,6 +75,7 @@ function update_tag(_id, code, tagId, sex, next) {
                     return next(null, null, null, null)
                 })
             } else {
+                console.log(user_arr,tagId,'--------------------------------')
                 client.membersBatchtagging(tagId, user_arr, async function (error, res) {
                     if (error) {
                         console.log('----未知 打标签 error------')
