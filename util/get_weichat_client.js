@@ -28,6 +28,7 @@ class Singleton {
     }
 
     setToken(appid, token, expires_in) {
+        console.log(appid,token,expires_in,'------------------------info')
         this.api.store = {accessToken: token, expireTime: Date.now() + (expires_in - 10) * 1000}
         this.api.token = {accessToken: token, expireTime: Date.now() + (expires_in - 10) * 1000}
     }
