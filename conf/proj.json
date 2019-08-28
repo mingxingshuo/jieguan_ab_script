@@ -1,3 +1,4 @@
 {
-	"mongodb":"mongodb://mingxing:liujiazhi88@dds-2ze36af17eb05c042440-pub.mongodb.rds.aliyuncs.com:3717/tuitui_cms?replicaSet=mgset-5196081"
+	"mongodb":"mongodb://mingxing:liujiazhi88@dds-2ze36af17eb05c042440-pub.mongodb.rds.aliyuncs.com:3717/tuitui_cms?replicaSet=mgset-5196081",
+	"memcache_prefix": "wx_platform"
 }
