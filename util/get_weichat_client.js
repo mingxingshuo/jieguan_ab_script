@@ -26,7 +26,7 @@ class Singleton {
             let token = await mem.get('access_token_' + appid)
             let access_token = token.split('!@#')[0]
             let expires_in = token.split('!@#')[1]
-            Singleton[appid].api.setToken(appid,access_token,expires_in)
+            Singleton[appid].setToken(appid,access_token,expires_in)
         }
         return Singleton[appid];
     }
