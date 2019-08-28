@@ -9,7 +9,7 @@ async function getClient(code) {
     let appid = conf.appid
     await mem.set("configure_" + code, appid, 30 * 24 * 3600)
     // }
-    let api = Singleton.getInterface(appid)
+    let api = await Singleton.getInterface(appid)
     // console.log(api.api, '----------------------api')
     return api.api;
 }
@@ -17,16 +17,16 @@ async function getClient(code) {
 class Singleton {
     constructor(appid) {
         var api = new API(appid);
-        let token = await mem.get('access_token_' + appid)
-        let access_token = token.split('!@#')[0]
-        let expires_in = token.split('!@#')[1]
-        api.setToken(appid,access_token,expires_in)
         this.api = api
     }
 
-    static getInterface(appid) {
+    static async getInterface(appid) {
         if (!Singleton[appid]) {
             Singleton[appid] = new Singleton(appid)
+            let token = await mem.get('access_token_' + appid)
+            let access_token = token.split('!@#')[0]
+            let expires_in = token.split('!@#')[1]
+            Singleton[appid].api.setToken(appid,access_token,expires_in)
         }
         return Singleton[appid];
     }
