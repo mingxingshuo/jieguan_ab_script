@@ -33,6 +33,7 @@ async function get_tag(_id, code, tagId, sex) {
 }
 
 function update_tag(_id, code, tagId, sex, next) {
+    console.log('--------------------------------')
     UserconfModel.fetchTag(_id, code, sex, async function (error, users) {
             console.log('-------未知  打标签---------')
             var user_arr = [];
