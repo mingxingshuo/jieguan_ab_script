@@ -9,7 +9,10 @@ async function getClient(code) {
         appid = conf.appid
         await mem.set("configure_" + code, appid, 30 * 24 * 3600)
     }
+    let token = mem.get('access_token_'+appid)
     let api = Singleton.getInterface(appid)
+    api.store = {accessToken: token, expireTime: Date.now() + (expires_in - 10) * 1000}
+    api.token = {accessToken: token, expireTime: Date.now() + (expires_in - 10) * 1000}
     console.log(api.store,'---------------------store')
     return api.api;
 }
