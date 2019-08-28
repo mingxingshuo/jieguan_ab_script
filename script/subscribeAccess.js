@@ -1,6 +1,7 @@
 const asyncRedis = require("async-redis");
 const redis_client = asyncRedis.createClient();
 const mem = require('../util/mem.js');
+const Singleton = require('../util/get_weichat_client');
 
 redis_client.on("subscribe", function (channel, count) {
     console.log('监听到订阅事件',channel, count)
