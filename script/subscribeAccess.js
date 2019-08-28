@@ -1,17 +1,20 @@
 const asyncRedis = require("async-redis");
 const redis_client = asyncRedis.createClient();
-
-redis_client.on("error", function (err) {
-    console.log("redis Error " + err);
-});
+const mem = require('../util/mem.js');
 
 redis_client.on("subscribe", function (channel, count) {
     console.log('监听到订阅事件',channel, count)
 });
 
-redis_client.on("message", function (channel, message) {
+redis_client.on("message", async function (channel, message) {
     console.log('监听到发布事件')
     console.log("sub channel " + channel + ": " + message);
+    let appid = message;
+    let token = await mem.get('access_token_' + appid)
+    let access_token = token.split('_')[0]
+    let expires_in = token.split('_')[1]
+    let saveToken = Singleton.getInterface(appid)
+    saveToken.setToken(appid,access_token,expires_in)
 });
 
 async function subscribeAccessToken(){
@@ -19,3 +22,4 @@ async function subscribeAccessToken(){
 }
 
 subscribeAccessToken()
+
