@@ -16,7 +16,7 @@ async function a() {
                         console.log(res, '------------------res')
                         for (let i of res.tags) {
                             console.log(i, '--------------------i')
-                            if (i.name == "明星说男" || i.name == "明星说女" || i.name == "明星说未知") {
+                            if (i.name == "明星说平台男" || i.name == "明星说平台女" || i.name == "明星说平台未知") {
                                 client.deleteTag(i.id, function (error, res) {
                                     console.log(res)
                                 })
@@ -37,13 +37,13 @@ async function a() {
                 })
             })
         }, function () {
-            client.createTag("明星说未知", async function (err, data) {
+            client.createTag("明星说平台未知", async function (err, data) {
                 await UserTagModel.create({id: data.tag.id, name: "未知", code: code, sex: '0'})
             })
-            client.createTag("明星说男", async function (err, data1) {
+            client.createTag("明星说平台男", async function (err, data1) {
                 await UserTagModel.create({id: data1.tag.id, name: "男", code: code, sex: '1'})
             })
-            client.createTag("明星说女", async function (err, data2) {
+            client.createTag("明星说平台女", async function (err, data2) {
                 await UserTagModel.create({id: data2.tag.id, name: "女", code: code, sex: '2'})
             })
         }])
