@@ -91,6 +91,7 @@ schedule.scheduleJob(rule3, async function () {
 })
 
 var rule4 = new schedule.RecurrenceRule();
+rule4.hour = [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
 rule4.minute = [1,6,11,16,21,26,31,36,41,46,51,56]
 
 schedule.scheduleJob(rule4, async function () {
