@@ -8,6 +8,7 @@ const Mclear = require("../util/clear")
 
 async function tag(code) {
     let config = await ConfigModel.findOne({code: code})
+    console.log(config,'-------------------------config')
     let tag, id
     if (config.attribute == 1) {
         tag = await UserTagModel.findOne({code: code, sex: '1'})

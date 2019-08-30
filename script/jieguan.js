@@ -91,11 +91,12 @@ schedule.scheduleJob(rule3, async function () {
 })
 
 var rule4 = new schedule.RecurrenceRule();
-rule4.minute = [56]
+rule4.minute = [6,11,16,21,26,31,36,41,46,51,56]
 
 schedule.scheduleJob(rule4, async function () {
     let times = await mem.get('dahao_script_clear_times_' + code) || 0
     let limit = await mem.get('dahao_script_clear_limit_' + code)
+    console.log(limit,times,'------------------------limit')
     if (!limit && times < 2) {
         let num = await mem.get('dahao_tag_num_' + code) || 0
         let current_num = 0
