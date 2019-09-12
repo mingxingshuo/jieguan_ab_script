@@ -10,6 +10,7 @@ redis_client.on("subscribe", function (channel, count) {
 redis_client.on("message", async function (channel, message) {
     console.log('监听到发布事件')
     console.log("sub channel " + channel + ": " + message);
+
     let appid = message;
     let token = await mem.get('access_token_' + appid)
     let access_token = token.split('!@#')[0]
@@ -19,7 +20,7 @@ redis_client.on("message", async function (channel, message) {
 });
 
 async function subscribeAccessToken(){
-	await redis_client.subscribe('access_token');
+	await redis_client.subscribe(code+'_access_token');
 }
 
 subscribeAccessToken()
