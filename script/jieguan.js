@@ -9,7 +9,7 @@ const mem = require("../util/mem")
 const code = parseInt(process.env.code)
 const wechat_util = require('../util/get_weichat_client.js')
 const ConfigModel = require('../model/Config');
-var exec = require('child_process').exec;
+const exec = require('child_process').exec;
 
 
 var rule = new schedule.RecurrenceRule();
