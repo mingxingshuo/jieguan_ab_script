@@ -92,13 +92,13 @@ schedule.scheduleJob(rule3, async function () {
 })
 
 var rule4 = new schedule.RecurrenceRule();
-rule4.hour = [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
-rule4.minute = [1,6,11,16,21,26,31,36,41,46,51,56]
+rule4.hour = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+rule4.minute = [1, 6, 11, 16, 21, 26, 31, 36, 41, 46, 51, 56]
 
 schedule.scheduleJob(rule4, async function () {
     let times = await mem.get('dahao_script_clear_times_' + code) || 0
     let limit = await mem.get('dahao_script_clear_limit_' + code)
-    console.log(limit,times,'------------------------limit')
+    console.log(limit, times, '------------------------limit')
     if (!limit && times < 2) {
         let num = await mem.get('dahao_tag_num_' + code) || 0
         let current_num = 0
@@ -109,12 +109,16 @@ schedule.scheduleJob(rule4, async function () {
                 current_num += i.count
             }
             console.log(num, current_num, '---------------------num')
-            if (num != 0 && num >= current_num) {
+            if (num >= current_num) {
                 await mem.set('dahao_tag_num_' + code, 0, 1)
                 await ConfigModel.update({code: code}, {status: 1})
                 let cmdStr = 'pm2 stop ' + code
-                // let cmdStr = 'pm2 delete ' + code
+                let cmdStr1 = 'pm2 delete ' + code
                 exec(cmdStr, function () {
+                    setTimeout(function () {
+                        exec(cmdStr1, function () {
+                        })
+                    }, 5 * 1000)
                 })
             } else {
                 await mem.set('dahao_tag_num_' + code, current_num, 60 * 60)
