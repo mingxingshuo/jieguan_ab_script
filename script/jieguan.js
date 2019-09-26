@@ -11,6 +11,8 @@ const wechat_util = require('../util/get_weichat_client.js')
 const ConfigModel = require('../model/Config');
 const exec = require('child_process').exec;
 require('../script/subscribeAccess')
+const asyncRedis = require("async-redis");
+const redis_client = asyncRedis.createClient();
 
 
 var rule = new schedule.RecurrenceRule();
@@ -112,13 +114,9 @@ schedule.scheduleJob(rule4, async function () {
             if (num >= current_num) {
                 await mem.set('dahao_tag_num_' + code, 0, 1)
                 await ConfigModel.update({code: code}, {status: 1})
+                await redis_client.publish('clear_code', code);
                 let cmdStr = 'pm2 stop ' + code
-                let cmdStr1 = 'pm2 delete ' + code
                 exec(cmdStr, function () {
-                    setTimeout(function () {
-                        exec(cmdStr1, function () {
-                        })
-                    }, 5 * 1000)
                 })
             } else {
                 await mem.set('dahao_tag_num_' + code, current_num, 60 * 60)
