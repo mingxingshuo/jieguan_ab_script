@@ -3,12 +3,12 @@ var ConfigModel = require('../model/Config');
 var mem = require('../util/mem.js');
 
 async function getClient(code) {
-    // let appid = await mem.get("configure_" + code)
-    // if(!appid){
-    let conf = await ConfigModel.findOne({code:code})
-    let appid = conf.appid
-    await mem.set("configure_" + code, appid, 60)
-    // }
+    let appid = await mem.get("configure_" + code)
+    if (!appid) {
+        let conf = await ConfigModel.findOne({code: code})
+        let appid = conf.appid
+        await mem.set("configure_" + code, appid, 60)
+    }
     let api = await Singleton.getInterface(appid)
     // console.log(api.api, '----------------------api')
     return api.api;
@@ -24,16 +24,16 @@ class Singleton {
         if (!Singleton[appid]) {
             Singleton[appid] = new Singleton(appid)
             let token = await mem.get('access_token_' + appid)
-            console.log(token,'======================================')
+            console.log(token, '======================================')
             let access_token = token.split('!@#')[0]
             let expires_in = token.split('!@#')[1]
-            Singleton[appid].setToken(appid,access_token,expires_in)
+            Singleton[appid].setToken(appid, access_token, expires_in)
         }
         return Singleton[appid];
     }
 
-    setToken(appid,token, expires_in) {
-        console.log(token,expires_in,'------------------------token')
+    setToken(appid, token, expires_in) {
+        console.log(token, expires_in, '------------------------token')
         this.api.store = {accessToken: token, expireTime: Date.now() + (expires_in - 10) * 1000}
         this.api.token = {accessToken: token, expireTime: Date.now() + (expires_in - 10) * 1000}
     }
