@@ -13,7 +13,7 @@ async function clear(code) {
     if (limit) {
         return
     }
-    if (times >= 2) {
+    if (times >= 1) {
         return
     }
     let conf = await ConfigModel.findOne({code: code})
