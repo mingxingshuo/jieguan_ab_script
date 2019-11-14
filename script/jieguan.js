@@ -103,24 +103,26 @@ schedule.scheduleJob(rule4, async function () {
     console.log(limit, times, '------------------------limit')
     if (!limit && times < 1) {
         let num = await mem.get('dahao_tag_num_' + code) || 0
-        let current_num = 0
-        let client = await wechat_util.getClient(code)
-        client.getTags(async function (err, data) {
-            console.log(err, data, '-----------------', code)
-            for (let i of data.tags) {
-                current_num += i.count
-            }
-            console.log(num, current_num, '---------------------num')
-            if (num >= current_num) {
-                await mem.set('dahao_tag_num_' + code, 0, 1)
-                await ConfigModel.update({code: code}, {status: 1})
-                await redis_client.publish('clear_code', code);
-                let cmdStr = 'pm2 stop ' + code
-                exec(cmdStr, function () {
-                })
-            } else {
-                await mem.set('dahao_tag_num_' + code, current_num, 60 * 60)
-            }
-        })
+        if (num != 0) {
+            let current_num = 0
+            let client = await wechat_util.getClient(code)
+            client.getTags(async function (err, data) {
+                console.log(err, data, '-----------------', code)
+                for (let i of data.tags) {
+                    current_num += i.count
+                }
+                console.log(num, current_num, '---------------------num')
+                if (num >= current_num) {
+                    await mem.set('dahao_tag_num_' + code, 0, 1)
+                    await ConfigModel.update({code: code}, {status: 1})
+                    await redis_client.publish('clear_code', code);
+                    let cmdStr = 'pm2 stop ' + code
+                    exec(cmdStr, function () {
+                    })
+                } else {
+                    await mem.set('dahao_tag_num_' + code, current_num, 60 * 60)
+                }
+            })
+        }
     }
 })
