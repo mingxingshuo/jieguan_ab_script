@@ -110,11 +110,8 @@ schedule.scheduleJob(rule4, async function () {
             for (let i of data.tags) {
                 current_num += i.count
             }
-            if(current_num == 0){
-                return
-            }
             console.log(num, current_num, '---------------------num')
-            if (num >= current_num) {
+            if (current_num!=0 && num >= current_num) {
                 await mem.set('dahao_tag_num_' + code, 0, 1)
                 await ConfigModel.update({code: code}, {status: 1})
                 await redis_client.publish('clear_code', code);
