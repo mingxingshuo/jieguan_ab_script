@@ -101,7 +101,7 @@ schedule.scheduleJob(rule4, async function () {
     let times = await mem.get('dahao_script_clear_times_' + code) || 0
     let limit = await mem.get('dahao_script_clear_limit_' + code)
     console.log(limit, times, '------------------------limit')
-    if (!limit && times < 1) {
+    if (!limit && times < 2) {
         let num = await mem.get('dahao_tag_num_' + code) || 0
         let current_num = 0
         let client = await wechat_util.getClient(code)
