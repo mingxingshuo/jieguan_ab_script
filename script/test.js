@@ -1,5 +1,6 @@
 var wechat_util = require('../util/get_weichat_client.js')
 var ConfigModel = require('../model/Config');
+const mem = require("../util/mem")
 
 async function a() {
     let code = process.argv.slice(2)[0]
