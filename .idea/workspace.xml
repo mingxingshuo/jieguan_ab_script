@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="888c7085-863e-4cfb-b676-ca322afa6a16" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/Config.js" afterPath="$PROJECT_DIR$/model/Config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/script/jieguan.js" afterPath="$PROJECT_DIR$/script/jieguan.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/script/test_tag_female.js" afterPath="$PROJECT_DIR$/script/test_tag_female.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/script/test_tag_male.js" afterPath="$PROJECT_DIR$/script/test_tag_male.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,21 +24,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="jieguan.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="jieguan.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/script/jieguan.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-72">
-              <caret line="50" column="40" lean-forward="true" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
+            <state relative-caret-position="292">
+              <caret line="68" column="22" lean-forward="false" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="subscribeAccess.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/script/subscribeAccess.js">
+      <file leaf-file-name="Config.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/Config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="8" column="3" lean-forward="false" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+            <state relative-caret-position="378">
+              <caret line="14" column="39" lean-forward="false" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -50,11 +54,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_tag_female.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test_tag_female.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/script/test_tag_female.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1323">
-              <caret line="49" column="32" lean-forward="false" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
+            <state relative-caret-position="540">
+              <caret line="38" column="23" lean-forward="true" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -103,8 +107,8 @@
       <file leaf-file-name="test_tag_male.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/script/test_tag_male.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="523">
-              <caret line="42" column="33" lean-forward="false" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="33" />
+            <state relative-caret-position="1680">
+              <caret line="83" column="60" lean-forward="false" selection-start-line="83" selection-start-column="60" selection-end-line="83" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -131,7 +135,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>console</find>
       <find>--error</find>
       <find>---error</find>
       <find>flag</find>
@@ -161,6 +164,7 @@
       <find>2</find>
       <find>1</find>
       <find>dahao_script_clear_times_</find>
+      <find>return</find>
     </findStrings>
     <replaceStrings>
       <replace>false</replace>
@@ -174,7 +178,6 @@
       <list>
         <option value="$PROJECT_DIR$/script/test_tag.js" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/model/Config.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/script/a.js" />
         <option value="$PROJECT_DIR$/script/b.js" />
@@ -185,16 +188,17 @@
         <option value="$PROJECT_DIR$/model/Userconfjg.js" />
         <option value="$PROJECT_DIR$/script/test_follow.js" />
         <option value="$PROJECT_DIR$/routes/jieguan.js" />
-        <option value="$PROJECT_DIR$/script/test_tag_female.js" />
-        <option value="$PROJECT_DIR$/script/test_tag_male.js" />
         <option value="$PROJECT_DIR$/script/createTag.js" />
         <option value="$PROJECT_DIR$/script/test_tag_unknow.js" />
         <option value="$PROJECT_DIR$/bin/www" />
         <option value="$PROJECT_DIR$/script/subscribeAccess.js" />
         <option value="$PROJECT_DIR$/util/get_weichat_client.js" />
-        <option value="$PROJECT_DIR$/script/jieguan.js" />
         <option value="$PROJECT_DIR$/util/clear.js" />
         <option value="$PROJECT_DIR$/script/test.js" />
+        <option value="$PROJECT_DIR$/model/Config.js" />
+        <option value="$PROJECT_DIR$/script/test_tag_male.js" />
+        <option value="$PROJECT_DIR$/script/jieguan.js" />
+        <option value="$PROJECT_DIR$/script/test_tag_female.js" />
       </list>
     </option>
   </component>
@@ -447,12 +451,12 @@
       <workItem from="1574074864512" duration="314000" />
       <workItem from="1574149966709" duration="760000" />
       <workItem from="1575355890233" duration="77000" />
-      <workItem from="1575355983387" duration="440000" />
+      <workItem from="1575355983387" duration="2060000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="283248000" />
+    <option name="totallyTimeSpent" value="284868000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
@@ -462,18 +466,18 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328594" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -670,13 +674,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/Config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="14" column="3" lean-forward="false" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/Record.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -797,26 +794,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/script/test_tag_female.js">
+    <entry file="file://$PROJECT_DIR$/model/Config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1323">
-          <caret line="49" column="32" lean-forward="false" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
+        <state relative-caret-position="378">
+          <caret line="14" column="39" lean-forward="false" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/script/test_tag_male.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="42" column="33" lean-forward="false" selection-start-line="42" selection-start-column="33" selection-end-line="42" selection-end-column="33" />
+        <state relative-caret-position="1680">
+          <caret line="83" column="60" lean-forward="false" selection-start-line="83" selection-start-column="60" selection-end-line="83" selection-end-column="60" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/script/jieguan.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-72">
-          <caret line="50" column="40" lean-forward="true" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
+        <state relative-caret-position="292">
+          <caret line="68" column="22" lean-forward="false" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/script/test_tag_female.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="38" column="23" lean-forward="true" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
           <folding />
         </state>
       </provider>

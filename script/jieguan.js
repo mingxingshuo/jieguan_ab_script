@@ -49,34 +49,44 @@ start = parseInt(Math.random() * 5)
 var times2 = [start, start + 5 * 1, start + 5 * 2, start + 5 * 3, start + 5 * 4, start + 5 * 5, start + 5 * 6, start + 5 * 7, start + 5 * 8, start + 5 * 9, start + 5 * 10, start + 5 * 11];
 rule2.second = times2;
 schedule.scheduleJob(rule2, async function () {
+    let ab_flag = false
+    let config = await ConfigModel.findOne({code: code})
+    if (config.ab_test == 2) {
+        ab_flag = true
+    }
     let tag_flag = await mem.get('big_tag_female_flag_' + code)
     if (!tag_flag) {
-        female.tag(code)
+        female.tag(code, ab_flag)
         await mem.set("big_tag_female_flag_" + code, 1, 60 * 60)
     } else {
         return
     }
 })
 schedule.scheduleJob(rule2, async function () {
+    let ab_flag = false
+    let config = await ConfigModel.findOne({code: code})
+    if (config.ab_test == 1) {
+        ab_flag = true
+    }
     let tag_flag = await mem.get('big_tag_male_flag_' + code)
     if (!tag_flag) {
-        male.tag(code)
+        male.tag(code, ab_flag)
         await mem.set("big_tag_male_flag_" + code, 1, 60 * 60)
     } else {
         return
     }
 })
-schedule.scheduleJob(rule2, async function () {
-    let tag_flag = await mem.get('big_tag_unknow_flag_' + code)
-    console.log('-------------未知_flag----', tag_flag)
-    console.log('-------未知 flag-------', !tag_flag)
-    if (!tag_flag) {
-        unknow.tag(code)
-        await mem.set("big_tag_unknow_flag_" + code, 1, 60 * 60)
-    } else {
-        return
-    }
-})
+// schedule.scheduleJob(rule2, async function () {
+//     let tag_flag = await mem.get('big_tag_unknow_flag_' + code)
+//     console.log('-------------未知_flag----', tag_flag)
+//     console.log('-------未知 flag-------', !tag_flag)
+//     if (!tag_flag) {
+//         unknow.tag(code)
+//         await mem.set("big_tag_unknow_flag_" + code, 1, 60 * 60)
+//     } else {
+//         return
+//     }
+// })
 
 var rule3 = new schedule.RecurrenceRule();
 rule3.hour = 1
@@ -111,7 +121,7 @@ schedule.scheduleJob(rule4, async function () {
                 current_num += i.count
             }
             console.log(num, current_num, '---------------------num')
-            if (current_num!=0 && num >= current_num) {
+            if (current_num != 0 && num >= current_num) {
                 await mem.set('dahao_tag_num_' + code, 0, 1)
                 await ConfigModel.update({code: code}, {status: 1})
                 await redis_client.publish('clear_code', code);
